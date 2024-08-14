@@ -11,7 +11,7 @@
   outputs = { self, nixpkgs, ... } @ inputs : {
     nixosConfigurations.framezork = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
-      specialAttrs = inputs;
+      specialArgs = inputs;
       modules = [
         ./disko.nix
         ./config.nix
