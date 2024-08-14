@@ -6,7 +6,7 @@
   outputs = { self, nixpkgs }: {
     nixosConfigurations.framezork = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
-      boot.loader.systemd-boot.enable = true;
+      modules = [ ./config.nix ];
     };
   };
 }
