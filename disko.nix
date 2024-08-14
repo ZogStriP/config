@@ -1,6 +1,9 @@
 { disko, ... } : {
   imports = [ disko.nixosModules.disko ];
 
+  # Enable periodic SSD TRIM
+  services.fstrim.enable = true;
+
   disko.devices = {
     disk.main = {
       type = "disk";
