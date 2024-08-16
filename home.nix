@@ -61,8 +61,5 @@
 
     # river window manager
     wayland.windowManager.river.enable = true;
-
-    # seatd service (required by `river`)
-    services.seatd.enable = true;
   };
 }
