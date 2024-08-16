@@ -1,4 +1,7 @@
 { pkgs, hostname, stateVersion, ... } : {
+  # Update CPU's microcode
+  hardware.cpu.intel.updateMicrocode = true;
+
   boot = {
     # Use latest kernel
     kernelPackages = pkgs.linuxPackages_latest;
