@@ -4,6 +4,9 @@
 
     disko.url = "github:nix-community/disko";
     disko.inputs.nixpkgs.follows = "nixpkgs";
+
+    home-manager.url = "github:nix-community/home-manager";
+    home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = { nixpkgs, ... } @ inputs : {
@@ -18,6 +21,7 @@
 
       modules = [
         ./disko.nix
+        ./home.nix
         ./config.nix
       ];
     };
