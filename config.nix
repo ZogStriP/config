@@ -1,4 +1,4 @@
-{
+{ stateVersion, ... } : {
   # Update CPU's microcode
   hardware.cpu.intel.updateMicrocode = true;
 
@@ -9,5 +9,5 @@
   time.timeZone = "Europe/Paris";
 
   # NixOS version this flake was initially created on
-  system.stateVersion = "24.05";
+  system.stateVersion = stateVersion;
 }
