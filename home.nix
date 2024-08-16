@@ -61,7 +61,7 @@
       };
     };
 
-    # river window manager
+    # river window manager - https://isaacfreund.com/software/river/
     # TODO: compare the following modules
     #   - https://github.com/nix-community/home-manager/blob/master/modules/services/window-managers/river.nix
     #   - https://github.com/NixOS/nixpkgs/blob/nixos-unstable/nixos/modules/programs/wayland/river.nix
