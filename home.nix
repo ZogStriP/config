@@ -19,6 +19,17 @@
     home.username = username;
     home.homeDirectory = "/home/${username}";
     home.stateVersion = stateVersion;
-    programs.home-manager.enable = true;
+
+    programs = {
+      home-manager.enable = true;
+      btop.enable = true;
+      fastfetch.enable = true;
+      vim.enable = true;
+      git = {
+        enable = true;
+        userEmail = "regis@hanol.fr";
+        userName = "zogstrip";
+      };
+    };
   };
 }
