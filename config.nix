@@ -30,6 +30,9 @@
   # Disable root by setting an impossible password hash
   users.users.root.hashedPassword = "!";
 
+  # Don't ask for password when `sudo`-ing
+  security.sudo.wheelNeedsPassword = false;
+
   # NixOS version this flake was initially created on
   system.stateVersion = stateVersion;
 }
