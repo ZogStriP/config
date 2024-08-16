@@ -1,4 +1,4 @@
-{ hostname, stateVersion, ... } : {
+{ pkgs, hostname, stateVersion, ... } : {
   boot = {
     # Use latest kernel
     kernelPackages = pkgs.linuxPackages_latest;
