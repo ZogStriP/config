@@ -8,11 +8,11 @@
   # System's timezone
   time.timeZone = "Europe/Paris";
 
-  # Ensures users can't be changed
+  # Ensure users can't be changed
   users.mutableUsers = false;
 
   # Disable root password
-  user.users.root.hashedPassword = "!";
+  users.users.root.hashedPassword = "!";
 
   # NixOS version this flake was initially created on
   system.stateVersion = stateVersion;
