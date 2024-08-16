@@ -1,4 +1,4 @@
-{ stateVersion, ... } : {
+{ username, stateVersion, ... } : {
   # Update CPU's microcode
   hardware.cpu.intel.updateMicrocode = true;
 
@@ -13,6 +13,13 @@
 
   # Disable root password
   users.users.root.hashedPassword = "!";
+
+  # zogstrip's user account
+  users.users.${username} = {
+    isNormalUser = true;
+    hashedPassword = "!";
+    extraGroups = [ "wheel" "networkmanager" ];
+  };
 
   # NixOS version this flake was initially created on
   system.stateVersion = stateVersion;
