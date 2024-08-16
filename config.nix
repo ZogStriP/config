@@ -3,7 +3,6 @@
   hardware.cpu.intel.updateMicrocode = true;
 
   # Enable all firmware
-  config.allowUnfree = true;
   hardware.enableAllFirmware = true;
 
   boot = {
