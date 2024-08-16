@@ -56,9 +56,9 @@
         git = true;
         icons = true;
       };
-
-      # river window manager
-      wayland.windowManager.river.enable = true;
     };
+
+    # river window manager
+    wayland.windowManager.river.enable = true;
   };
 }
