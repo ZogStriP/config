@@ -2,6 +2,9 @@
   # Update CPU's microcode
   hardware.cpu.intel.updateMicrocode = true;
 
+  # Enable all firmware
+  hardware.enableAllFirmware = true;
+
   boot = {
     # Use latest kernel
     kernelPackages = pkgs.linuxPackages_latest;
