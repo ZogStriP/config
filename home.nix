@@ -14,6 +14,7 @@
     extraGroups = [ "wheel" "networkmanager" ];
   };
 
+  # zogstrip's home configuration
   home-manager.users.${username} = {
     home.username = username;
     home.homeDirectory = "/home/${username}";
