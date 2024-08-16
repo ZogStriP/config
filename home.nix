@@ -4,12 +4,6 @@
   home-manager.useGlobalPkgs = true;
   home-manager.useUserPackages = true;
 
-  users.users.${username} = {
-    isNormalUser = true;
-    hashedPassword = "!";
-    extraGroups = [ "wheel" "networkmanager" ];
-  };
-
   home-manager.users.${username} = {
     home.username = username;
     home.homeDirectory = "/home/${username}";
