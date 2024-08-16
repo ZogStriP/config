@@ -9,14 +9,15 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { nixpkgs, ... } @ inputs : let
-    hostname = "framezork";
-    username = "zogstrip";
-    stateVersion = "24.05";
-  in {
-    nixosConfigurations.${hostname} = nixpkgs.lib.nixosSystem {
+  outputs = { nixpkgs, ... } @ inputs {
+    nixosConfigurations.framezork = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
-      specialArgs = inputs // { inherit hostname username stateVersion; };
+
+      specialArgs = inputs // {
+        username = "zogstrip";
+        stateVersion = "24.05;
+      };
+
       modules = [
         ./disko.nix
         ./home.nix
