@@ -24,6 +24,8 @@
         ./home.nix
         ./config.nix
       ];
+
+      nixpkgs.config.allowUnfree = true;
     };
   };
 }
