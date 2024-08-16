@@ -26,7 +26,10 @@
     home.packages = with pkgs [
       fastfetch
       curl
+      wget
+      httpie
       vim
+      foot # terminal
       fzf # fuzzy finder
       tlp # power manager
       jq # json tooling
