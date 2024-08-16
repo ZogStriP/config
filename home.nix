@@ -23,7 +23,7 @@
     home.stateVersion = stateVersion;
 
     # Programs that don't need configuration
-    home.packages = with pkgs [
+    home.packages = with pkgs; [
       fastfetch
       curl
       wget
