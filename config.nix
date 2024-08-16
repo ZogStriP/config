@@ -36,8 +36,10 @@
   # Don't ask for password when `sudo`-ing
   security.sudo.wheelNeedsPassword = false;
 
+  # Enable PolKit
+  security.polkit.enable = true;
+  
   # services required by `river` window manager
-  services.polkit.enable = true;
   services.seatd.enable = true;
 
   # Allow "flakes" system-wide
