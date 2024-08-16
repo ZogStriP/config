@@ -11,4 +11,4 @@ sudo nix --experimental-features "nix-command flakes" run github:nix-community/d
   --disk main /dev/nvme0n1
 ```
 
-> ⚠️ Will ask for LUKS password
+⚠️ Will ask for LUKS password.
