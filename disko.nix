@@ -4,6 +4,9 @@
   # Enable periodic SSD TRIM
   services.fstrim.enable = true;
 
+  # Ensure /home is mounted in initrd
+  fileSystems."/home".neededForBoot = true;
+
   disko.devices = {
     disk.main = {
       type = "disk";
