@@ -45,6 +45,9 @@
   # Don't ask for password when `sudo`-ing
   security.sudo.wheelNeedsPassword = false;
 
+  # Enable PolKit (required for wayland / river)
+  security.polkit.enable = true;
+
   # Disable documentations for leaner/faster install
   documentation.enable = false;
   documentation.doc.enable = false;
