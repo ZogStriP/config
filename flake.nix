@@ -9,7 +9,7 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { nixpkgs, ... } @ inputs {
+  outputs = { nixpkgs, ... } @ inputs : {
     nixosConfigurations.framezork = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
 
