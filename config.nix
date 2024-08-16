@@ -3,6 +3,7 @@
   hardware.cpu.intel.updateMicrocode = true;
 
   # Enable all firmware
+  nixpkgs.config.allowUnfree = true;
   hardware.enableAllFirmware = true;
 
   boot = {
