@@ -6,9 +6,10 @@
     # Ensure users can't be changed
     mutableUsers = false;
 
-    # Disable root
+    # Disable root by setting an impossible password hash
     users.root.hashedPassword = "!";
 
+    # zogstrip's user account
     users.${username} = {
       # Just a regular user
       isNormalUser = true;
