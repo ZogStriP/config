@@ -33,6 +33,9 @@
   # Don't ask for password when `sudo`-ing
   security.sudo.wheelNeedsPassword = false;
 
+  # Allow "flakes" system-wide
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
   # NixOS version this flake was initially created on
   system.stateVersion = stateVersion;
 }
