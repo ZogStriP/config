@@ -1,10 +1,15 @@
 { pkgs, hostname, stateVersion, ... } : {
-  # Update CPU's microcode
-  hardware.cpu.intel.updateMicrocode = true;
-
-  # Enable all firmware
+  # Allow proprietary firmware
   nixpkgs.config.allowUnfree = true;
-  hardware.enableAllFirmware = true;
+
+  hardware = {
+    # Enable all firmware
+    enableAllFirmware = true;
+    # Update CPU's microcode
+    cpu.intel.updateMicrocode = true;
+    # Enable hardware accelerated graphics drivers
+    graphics.enable = true;
+  };
 
   boot = {
     # Use latest kernel
