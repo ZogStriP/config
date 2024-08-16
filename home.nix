@@ -5,7 +5,7 @@
   home-manager.useUserPackages = true;
 
   # zogstrip's user account
-  users.${username} = {
+  users.users.${username} = {
     # Just a regular user
     isNormalUser = true;
     # No need for a password
