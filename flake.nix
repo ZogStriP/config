@@ -14,15 +14,12 @@
       system = "x86_64-linux";
 
       specialArgs = inputs // {
+        hostname = "framezork";
         username = "zogstrip";
         stateVersion = "24.05;
       };
 
-      modules = [
-        ./disko.nix
-        ./home.nix
-        ./config.nix
-      ];
+      modules = [ ./disko.nix ./home.nix ./config.nix ];
     };
   };
 }
