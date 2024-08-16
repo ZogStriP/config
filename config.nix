@@ -1,6 +1,9 @@
-{ stateVersion, ... } : {
+{ hostname, stateVersion, ... } : {
   # Use the "systemd-boot" boot loader
   boot.loader.systemd-boot.enable = true;
+
+  # Machine's name
+  networking.hostName = hostname;
 
   # Ensure users can't be changed
   users.mutableUsers = false;
