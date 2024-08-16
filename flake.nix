@@ -9,11 +9,11 @@
   outputs = { nixpkgs, ... } @ inputs : let
     hostname = "framezork";
     username = "zogstrip";
-    systemVersion = "24.05";
+    stateVersion = "24.05";
   in {
     nixosConfigurations.${hostname} = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
-      specialArgs = inputs // { inherit hostname username systemVersion };
+      specialArgs = inputs // { inherit hostname username stateVersion };
       modules = [
         ./disko.nix
         ./config.nix
