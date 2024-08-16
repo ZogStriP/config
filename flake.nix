@@ -16,7 +16,7 @@
       specialArgs = inputs // {
         hostname = "framezork";
         username = "zogstrip";
-        stateVersion = "24.05;
+        stateVersion = "24.05";
       };
 
       modules = [ ./disko.nix ./home.nix ./config.nix ];
