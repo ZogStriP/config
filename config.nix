@@ -36,6 +36,9 @@
   # Don't ask for password when `sudo`-ing
   security.sudo.wheelNeedsPassword = false;
 
+  # seatd service (required by `river` window manager)
+  services.seatd.enable = true;
+
   # Allow "flakes" system-wide
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
