@@ -4,6 +4,9 @@
   home-manager.useGlobalPkgs = true;
   home-manager.useUserPackages = true;
 
+  # Automatically login zogstrip
+  services.getty.autologinUser = username;
+
   # zogstrip's user account
   users.users.${username} = {
     # Just a regular user
@@ -29,7 +32,6 @@
       wget
       httpie
       vim
-      foot # terminal
       fzf # fuzzy finder
       tlp # power manager
       jq # json tooling
@@ -60,6 +62,9 @@
     };
 
     # river window manager
+    # TODO: compare the following modules
+    #   - https://github.com/nix-community/home-manager/blob/master/modules/services/window-managers/river.nix
+    #   - https://github.com/NixOS/nixpkgs/blob/nixos-unstable/nixos/modules/programs/wayland/river.nix
     wayland.windowManager.river.enable = true;
   };
 }
