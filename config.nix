@@ -40,6 +40,11 @@
   # Don't ask for password when `sudo`-ing
   security.sudo.wheelNeedsPassword = false;
 
+  # Disable documentations for leaner/faster install
+  documentation.enable = false;
+  documentation.doc.enable = false;
+  documentation.nixos.enable = false;
+
   # Allow "flakes" system-wide
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
