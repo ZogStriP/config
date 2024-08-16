@@ -16,7 +16,7 @@
         configurationLimit = 5;
       };
 
-      # Allows NixOS to modify EFI variables
+      # Allow NixOS to modify EFI variables
       efi.canTouchEfiVariables = true;
     };
   };
