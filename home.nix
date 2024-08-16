@@ -38,6 +38,7 @@
       ripgrep # better `grep`
     ];
 
+    # Programs that need configuration
     programs = {
       # Let home manager manage itself
       home-manager.enable = true;
@@ -60,5 +61,8 @@
 
     # river window manager
     wayland.windowManager.river.enable = true;
+
+    # seatd service (required by `river`)
+    services.seatd.enable = true;
   };
 }
