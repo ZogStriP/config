@@ -47,7 +47,7 @@
         enable = true;
         userEmail = "regis@hanol.fr";
         userName = "zogstrip";
-        diffstatic.enable = true;
+        difftastic.enable = true;
       };
 
       # better `ls`
