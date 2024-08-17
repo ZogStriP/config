@@ -51,6 +51,9 @@
   # Enable PolKit (required for wayland / river)
   security.polkit.enable = true;
 
+  # Enable TLP for better power management
+  services.tlp.enable = true;
+
   # Disable power button
   services.logind.powerKey = "ignore";
 
