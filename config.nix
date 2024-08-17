@@ -1,10 +1,7 @@
 { pkgs, hostname, stateVersion, ... } : {
-  # Allow proprietary firmwares/packages
-  nixpkgs.config.allowUnfree = true;
-
   hardware = {
-    # Enable all firmware
-    enableAllFirmware = true;
+    # Various open source drivers
+    enableRedistributableFirmware = true;
     # Update CPU's microcode
     cpu.intel.updateMicrocode = true;
     # Enable hardware accelerated graphics drivers
