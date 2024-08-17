@@ -7,6 +7,9 @@
   # Automatically login zogstrip
   services.getty.autologinUser = username;
 
+  # Enable TLP for better power/battery management
+  services.tlp.enable = true;
+
   # zogstrip's user account
   users.users.${username} = {
     # Just a regular user
@@ -33,8 +36,10 @@
       httpie
       vim
       fzf # fuzzy finder
-      tlp # power manager
       jq # json tooling
+      atuin # better shell history
+      eza # better `ls`
+      zoxide # better `cd`
       btop # better `top`
       bat # better `cat`
       ripgrep # better `grep`
@@ -51,13 +56,6 @@
         userEmail = "regis@hanol.fr";
         userName = "zogstrip";
         difftastic.enable = true;
-      };
-
-      # better `ls`
-      eza = {
-        enable = true;
-        git = true;
-        icons = true;
       };
     };
 
