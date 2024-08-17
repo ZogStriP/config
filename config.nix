@@ -36,6 +36,9 @@
   # Machine's name
   networking.hostName = hostname;
 
+  # Machine's timezone
+  time.timeZone = "Europe/Paris";
+
   # Ensure users can't be changed
   users.mutableUsers = false;
 
