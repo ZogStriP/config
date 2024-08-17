@@ -46,7 +46,10 @@
         difftastic.enable = true;
       };
 
-      # system informations
+      # (wayland) terminal emulator
+      foot.enable = true;
+
+      # system informations (better `neofetch`)
       fastfetch.enable = true;
 
       # text editor
@@ -57,6 +60,9 @@
 
       # json tooling
       jq.enable = true;
+
+      # web browser
+      firefox.enable = true;
 
       # better shell history
       atuin.enable = true;
