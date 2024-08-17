@@ -33,8 +33,7 @@
               # SDD Perf - https://wiki.archlinux.org/title/Dm-crypt/Specialties#Disable_workqueue_for_increased_solid_state_drive_(SSD)_performance
               settings.bypassWorkqueues = true;
               content = {
-                type = "filesystem";
-                format = "btrfs";
+                type = "btrfs";
                 extraArgs = [ "-L" "nixos" "-f" ];
                 subvolumes = {
                   "/nix" = {
