@@ -48,6 +48,9 @@
   # Enable PolKit (required for wayland / river)
   security.polkit.enable = true;
 
+  # Disable power button
+  services.logind.powerKey = "ignore";
+
   # Disable documentations for leaner/faster install
   documentation.enable = false;
   documentation.doc.enable = false;
