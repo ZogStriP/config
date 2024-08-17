@@ -60,6 +60,9 @@
       KEYBOARD_KEY_3a=esc
   '';
 
+  # Remove nano
+  programs.nano.enable = false;
+
   # Disable documentations for leaner/faster install
   documentation.enable = false;
   documentation.doc.enable = false;
