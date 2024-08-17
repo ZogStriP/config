@@ -30,19 +30,9 @@
 
     # Programs that don't need configuration
     home.packages = with pkgs; [
-      fastfetch
       curl
       wget
       httpie
-      vim
-      fzf # fuzzy finder
-      jq # json tooling
-      atuin # better shell history
-      eza # better `ls`
-      zoxide # better `cd`
-      btop # better `top`
-      bat # better `cat`
-      ripgrep # better `grep`
     ];
 
     # Programs that need configuration
@@ -50,13 +40,43 @@
       # Let home manager manage itself
       home-manager.enable = true;
 
-      #
+      git.enable = true;
+
       git = {
-        enable = true;
         userEmail = "regis@hanol.fr";
         userName = "zogstrip";
         difftastic.enable = true;
       };
+
+      # system informations
+      fastfetch.enable = true;
+
+      # text editor
+      vim.enable = true;
+
+      # fuzzy finder
+      fzf.enable = true;
+
+      # json tooling
+      jq.enable = true;
+
+      # better shell history
+      atuin.enable = true;
+
+      # better `ls`
+      eza.enable = true;
+
+      # better `cd`
+      zoxide.enable = true;
+
+      # better `top`
+      btop.enable = true;
+
+      # better `cat`
+      bat.enable = true;
+
+      # better `grep`
+      ripgrep.enable = true;
     };
 
     # river window manager - https://isaacfreund.com/software/river/
