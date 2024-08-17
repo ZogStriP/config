@@ -28,7 +28,10 @@
             content = {
               type = "luks";
               name = "luks";
+              # Allow SSD TRIM
               settings.allowDiscards = true;
+              # SDD Perf - https://wiki.archlinux.org/title/Dm-crypt/Specialties#Disable_workqueue_for_increased_solid_state_drive_(SSD)_performance
+              settings.bypassWorkqueues = true;
               content = {
                 type = "filesystem";
                 format = "ext4";
