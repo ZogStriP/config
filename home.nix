@@ -7,9 +7,6 @@
   # Automatically login zogstrip
   services.getty.autologinUser = username;
 
-  # Enable TLP for better power/battery management
-  services.tlp.enable = true;
-
   # zogstrip's user account
   users.users.${username} = {
     # Just a regular user
