@@ -40,6 +40,7 @@
       # Let home manager manage itself
       home-manager.enable = true;
 
+      # source control
       git.enable = true;
 
       git = {
