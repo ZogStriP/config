@@ -51,6 +51,12 @@
   # Disable power button
   services.logind.powerKey = "ignore";
 
+  # Remap CAPS lock to ESC
+  services.udev.extraHwdb = ''
+    evdev:atkbd:*
+      KEYBOARD_KEY_3a=esc
+  '';
+
   # Disable documentations for leaner/faster install
   documentation.enable = false;
   documentation.doc.enable = false;
