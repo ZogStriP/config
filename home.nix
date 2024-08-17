@@ -30,6 +30,8 @@
       curl
       wget
       httpie
+      magick
+      ffmpeg
     ];
 
     # Programs that need configuration
@@ -63,6 +65,9 @@
 
       # web browser
       firefox.enable = true;
+
+      # media player
+      mpv.enable = true;
 
       # better shell history
       atuin.enable = true;
