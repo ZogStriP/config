@@ -1,12 +1,12 @@
 { pkgs, hostname, stateVersion, ... } : {
-  hardware = {
-    # Various open source drivers
-    enableRedistributableFirmware = true;
-    # Update CPU's microcode
-    cpu.intel.updateMicrocode = true;
-    # Enable hardware accelerated graphics drivers
-    graphics.enable = true;
-  };
+  # Various open source drivers
+  hardware.enableRedistributableFirmware = true;
+  
+  # Update CPU's microcode
+  hardware.cpu.intel.updateMicrocode = true;
+  
+  # Enable hardware accelerated graphics drivers
+  hardware.graphics.enable = true;
 
   boot = {
     # Use latest kernel
