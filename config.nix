@@ -1,5 +1,5 @@
 { pkgs, hostname, stateVersion, ... } : {
-  # Allow proprietary firmware
+  # Allow proprietary firmwares/packages
   nixpkgs.config.allowUnfree = true;
 
   hardware = {
