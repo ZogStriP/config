@@ -30,7 +30,7 @@
       curl
       wget
       httpie
-      magick
+      imagemagick
       ffmpeg
     ];
 
