@@ -96,8 +96,8 @@
     
     # disable xwayland
     # TODO: figure out which one works (maybe use lib.mkForce)
-    programs.xwayland.enable = false
-    programs.river.xwayland.enable = false
+    programs.xwayland.enable = false;
+    programs.river.xwayland.enable = false;
     wayland.windowManager.river.xwayland.enable = false;
   };
 }
