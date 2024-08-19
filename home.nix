@@ -28,10 +28,9 @@
     # Programs that don't need configuration
     home.packages = with pkgs; [
       curl
-      wget
-      httpie
-      imagemagick
-      ffmpeg
+      dust # better `du`
+      duf # better `df`
+      hexyl # better `xxd`
     ];
 
     # Programs that need configuration
@@ -86,6 +85,9 @@
 
       # better `grep`
       ripgrep.enable = true;
+
+      # better `find`
+      fd.enable = true;
     };
 
     # river window manager - https://isaacfreund.com/software/river/
