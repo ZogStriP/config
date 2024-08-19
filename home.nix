@@ -93,5 +93,7 @@
     #   - https://github.com/nix-community/home-manager/blob/master/modules/services/window-managers/river.nix
     #   - https://github.com/NixOS/nixpkgs/blob/nixos-unstable/nixos/modules/programs/wayland/river.nix
     wayland.windowManager.river.enable = true;
+    # disable xwayland
+    wayland.windowManager.river.xwayland.enable = false;
   };
 }
