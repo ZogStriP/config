@@ -93,7 +93,11 @@
     #   - https://github.com/nix-community/home-manager/blob/master/modules/services/window-managers/river.nix
     #   - https://github.com/NixOS/nixpkgs/blob/nixos-unstable/nixos/modules/programs/wayland/river.nix
     wayland.windowManager.river.enable = true;
+    
     # disable xwayland
+    # TODO: figure out which one works (maybe use lib.mkForce)
+    programs.xwayland.enable = false
+    programs.river.xwayland.enable = false
     wayland.windowManager.river.xwayland.enable = false;
   };
 }
