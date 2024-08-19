@@ -12,6 +12,9 @@
     # Use latest kernel
     kernelPackages = pkgs.linuxPackages_latest;
 
+    # Disable bcache support in initrd
+    bcache.enable = false;
+
     loader = {
       # Don't display the boot loader (press <space> to show it if needed)
       timeout = 0;
@@ -67,6 +70,9 @@
   documentation.enable = false;
   documentation.doc.enable = false;
   documentation.nixos.enable = false;
+
+  # Disable nix channels
+  nix.channel.enable = false;
 
   # Allow "flakes" system-wide
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
