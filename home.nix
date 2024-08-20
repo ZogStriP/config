@@ -120,7 +120,6 @@
         spawn = [
           "rivertile" # the layout manager
           "foot" # terminal emulator
-          "firefox" # web browser
         ];
       };
     };
