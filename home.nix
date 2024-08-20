@@ -47,7 +47,12 @@
         difftastic.enable = true;
       };
 
+      # yambar status bar
+      # https://codeberg.org/dnkl/yambar
+      yambar.enable = true;
+
       # (wayland) terminal emulator
+      # https://codeberg.org/dnkl/foot
       foot.enable = true;
 
       # system informations (better `neofetch`)
