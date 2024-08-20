@@ -54,6 +54,7 @@
       yambar.settings.bar = {
         height = 26;
         location = "bottom";
+        background = "000000";
       };
 
       # (wayland) terminal emulator
@@ -113,8 +114,6 @@
       settings = {
         # black background
         background-color = "0x000000";
-        # faster keyboard repeat rate
-        set-repeat = "50 150";
         # use `rivertile` for layout
         default-layout = "rivertile";
         # keyboard shortcuts
