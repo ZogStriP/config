@@ -93,6 +93,12 @@
 
       # better `top`
       btop.enable = true;
+      btop.settings = {
+        # set refresh rate to 1s
+        update_ms = 1000;
+        # show processes as a tree
+        proc_tree = true;
+      };
 
       # better `cat`
       bat.enable = true;
