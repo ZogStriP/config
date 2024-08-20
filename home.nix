@@ -109,9 +109,9 @@
         default-layout = "rivertile";
         # keyboard shortcuts
         map.normal = {
-          # open terminal
+          # open new terminal
           "Super Return" = "spawn foot";
-          # close the focused view
+          # close focused view
           "Super Q" = "close";
           # exit `river`
           "Super+Shift E" = "exit";
@@ -119,7 +119,7 @@
         # launch some apps when starting
         spawn = [
           "rivertile" # the layout manager
-          "foot" # terminal emulate
+          "foot" # terminal emulator
           "firefox" # web browser
         ];
       };
