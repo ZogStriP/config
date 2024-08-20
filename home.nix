@@ -123,7 +123,7 @@
         };
         # launch some apps when starting
         spawn = [
-          "rivertile" # the layout manager
+          "rivertile" # layout manager
           "foot" # terminal emulator
         ];
       };
