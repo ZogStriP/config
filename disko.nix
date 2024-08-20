@@ -4,8 +4,9 @@
   # Enable periodic SSD TRIM
   services.fstrim.enable = true;
 
-  # Ensure /home is mounted in initrd
+  # Ensure filesystems are mounted in initrd
   fileSystems."/home".neededForBoot = true;
+  fileSystems."/var/log".neededForBoot = true;
 
   disko.devices = {
     disk.main = {
@@ -45,6 +46,10 @@
                   };
                   "/persist" = {
                     mountpoint = "/persist";
+                    mountOptions = [ "compress=zstd" "noatime" ];
+                  };
+                  "/log" = {
+                    mountpoint = "/var/log";
                     mountOptions = [ "compress=zstd" "noatime" ];
                   };
                   "/swap" = {
