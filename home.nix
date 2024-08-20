@@ -105,6 +105,8 @@
         background-color = "0x000000";
         # faster keyboard repeat rate
         set-repeat = "50 150";
+        # use `rivertile` for layout
+        default-layout = "rivertile";
         # keyboard shortcuts
         map.normal = {
           # open terminal
@@ -114,6 +116,12 @@
           # exit `river`
           "Super+Shift E" = "exit";
         };
+        # launch some apps when starting
+        spawn = [
+          "rivertile" # the layout manager
+          "foot" # terminal emulate
+          "firefox" # web browser
+        ];
       };
     };
   };
