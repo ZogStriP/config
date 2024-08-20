@@ -39,6 +39,9 @@
       # Let home manager manage itself
       home-manager.enable = true;
 
+      # enable `bash`
+      bash.enable = true;
+
       # source control
       git.enable = true;
 
