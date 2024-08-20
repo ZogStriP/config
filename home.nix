@@ -130,6 +130,7 @@
         };
         # launch some apps when starting
         spawn = [
+          "yambar" # status bar
           "rivertile" # layout manager
           "foot" # terminal emulator
         ];
