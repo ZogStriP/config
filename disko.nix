@@ -5,6 +5,7 @@
   services.fstrim.enable = true;
 
   # Ensure filesystems are mounted in initrd
+  # Note: "/", "/nix", and "/var/log" are always `neededForBoot`
   fileSystems."/home".neededForBoot = true;
   fileSystems."/persist".neededForBoot = true;
 
