@@ -50,6 +50,10 @@
       # yambar status bar
       # https://codeberg.org/dnkl/yambar
       yambar.enable = true;
+      yambar.settings.bar = {
+        height = 26;
+        location = "bottom";
+      };
 
       # (wayland) terminal emulator
       # https://codeberg.org/dnkl/foot
