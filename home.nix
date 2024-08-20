@@ -57,7 +57,7 @@
       yambar.settings.bar = {
         height = 26;
         location = "bottom";
-        background = "000000";
+        background = "000000FF";
       };
 
       # (wayland) terminal emulator
