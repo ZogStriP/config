@@ -44,7 +44,6 @@
 
       # source control
       git.enable = true;
-
       git = {
         userEmail = "regis@hanol.fr";
         userName = "zogstrip";
@@ -84,6 +83,7 @@
 
       # better shell history
       atuin.enable = true;
+      atuin.flags = [ "--disable-up-arrow" ];
 
       # better `ls`
       eza.enable = true;
