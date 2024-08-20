@@ -7,6 +7,8 @@
 
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+
+    impermanence.url = "github:nix-community/impermanence";
   };
 
   outputs = { nixpkgs, ... } @ inputs : {
