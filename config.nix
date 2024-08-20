@@ -42,7 +42,7 @@
   # Ensure users can't be changed
   users.mutableUsers = false;
 
-  # Disable root by setting an impossible password hash
+  # Disable root login by setting an impossible password hash
   users.users.root.hashedPassword = "!";
 
   # Don't ask for password when `sudo`-ing
