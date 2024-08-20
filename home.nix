@@ -91,11 +91,30 @@
     };
 
     # river window manager - https://isaacfreund.com/software/river/
+    # TODO: disable xwayland?
     # TODO: compare the following modules
     #   - https://github.com/nix-community/home-manager/blob/master/modules/services/window-managers/river.nix
     #   - https://github.com/NixOS/nixpkgs/blob/nixos-unstable/nixos/modules/programs/wayland/river.nix
-    wayland.windowManager.river.enable = true;
-    
-    # TODO: disable xwayland?
+    wayland.windowManager.river = {
+      # enable `river` wm
+      enable = true;
+      # DOC: https://codeberg.org/river/river/src/branch/master/doc/riverctl.1.scd
+      # EXAMPLE: https://codeberg.org/river/river/src/branch/master/example/init
+      settings = {
+        # black background
+        background-color = "0x000000";
+        # faster keyboard repeat rate
+        set-repeat = "50 150";
+        # keyboard shortcuts
+        map.normal = {
+          # open terminal
+          "Super Return" = "spawn foot";
+          # close the focused view
+          "Super Q" = "close";
+          # exit `river`
+          "Super+Shift E" = "exit";
+        };
+      };
+    };
   };
 }
