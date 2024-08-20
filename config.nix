@@ -66,11 +66,6 @@
   # Remove nano
   programs.nano.enable = false;
 
-  # Disable documentations for leaner/faster install
-  documentation.enable = false;
-  documentation.doc.enable = false;
-  documentation.nixos.enable = false;
-
   # Disable nix channels
   nix.channel.enable = false;
 
