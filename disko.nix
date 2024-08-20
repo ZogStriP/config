@@ -21,6 +21,9 @@
               type = "filesystem";
               format = "vfat";
               mountpoint = "/boot";
+              # Ensure the /boot partition isn't world-readable
+              # cf. https://github.com/NixOS/nixpkgs/pull/300673
+              mountOptions = [ "umask=077" ];
             };
           };
           luks = {
@@ -62,7 +65,7 @@
       };
       "/home" = {
         fsType = "tmpfs";
-        mountOptions = [ "size=128M" "defaults" "mode=0755" ];
+        mountOptions = [ "size=128M" "defaults" "mode=755" ];
       };
       "/tmp" = {
         fsType = "tmpfs";
