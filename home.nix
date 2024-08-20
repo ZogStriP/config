@@ -29,6 +29,7 @@
     home.packages = with pkgs; [
       curl
       dust # better `du`
+      ncdu # interactive `du`
       duf # better `df`
       hexyl # better `xxd`
     ];
