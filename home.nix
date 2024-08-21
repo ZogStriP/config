@@ -144,9 +144,12 @@
         };
         # launch some apps when starting
         spawn = [
-          "yambar" # status bar
-          "rivertile" # layout manager
-          "foot" # terminal emulator
+          # status bar
+          "yambar"
+          # layout manager
+          "'rivertile -vew-padding 0 -outer-padding 0'"
+          # terminal emulator
+          "foot"
         ];
       };
     };
