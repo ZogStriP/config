@@ -147,7 +147,7 @@
           # status bar
           "yambar"
           # layout manager
-          "'rivertile -vew-padding 0 -outer-padding 0'"
+          "'rivertile -view-padding 0 -outer-padding 0'"
           # terminal emulator
           "foot"
         ];
