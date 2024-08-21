@@ -54,6 +54,9 @@
   # Enable TLP for better power management
   services.tlp.enable = true;
 
+  # Enable pipewire for audio / video streams
+  services.pipewire.enable = true;
+
   # Disable power button
   services.logind.powerKey = "ignore";
 
