@@ -25,6 +25,12 @@
     # Sync home manager's version with NixOS'
     home.stateVersion = stateVersion;
 
+    # Some shell aliases
+    home.shellAliases = {
+      ".." = "cd ..";
+      "..." = "cd ../..";
+    };
+
     # Programs that don't need configuration
     home.packages = with pkgs; [
       curl
