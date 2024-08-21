@@ -1,7 +1,9 @@
 { home-manager, pkgs, username, stateVersion, ... } : {
   imports = [ home-manager.nixosModules.home-manager ];
 
+  # Use NixOS nixpkgs & configurations
   home-manager.useGlobalPkgs = true;
+  # Install packages in /etc/profiles
   home-manager.useUserPackages = true;
 
   # Automatically login zogstrip
