@@ -103,6 +103,7 @@
 
       # better shell history
       atuin.enable = true;
+      # don't show atuin when pressing the ⬆️ key
       atuin.flags = [ "--disable-up-arrow" ];
 
       # better `ls`
