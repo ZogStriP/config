@@ -69,6 +69,9 @@
   # Disable power button
   services.logind.powerKey = "ignore";
 
+  # Enable natural scrolling on touchpad
+  services.libinput.touchpad.naturalScrolling = true;
+
   # Remap CAPS lock to ESC
   services.udev.extraHwdb = ''
     evdev:atkbd:*
