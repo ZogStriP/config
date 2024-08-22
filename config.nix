@@ -15,6 +15,9 @@
     # Disable bcache support in initrd
     bcache.enable = false;
 
+    # Enable systemd in initrd
+    initrd.systemd.enable = true;
+
     loader = {
       # Don't display the boot loader (press <space> to show it if needed)
       timeout = 0;
@@ -35,6 +38,12 @@
 
   # Machine's name
   networking.hostName = hostname;
+
+  # Enable network manager
+  networking.networkmanager.enable = true;
+
+  # Use `iwd` instead of `wpa_supplicant` for managing WiFi
+  networking.networkmanager.wifi.backend = "iwd";
 
   # Machine's timezone
   time.timeZone = "Europe/Paris";
