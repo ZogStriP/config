@@ -55,7 +55,19 @@
       git = {
         userEmail = "regis@hanol.fr";
         userName = "zogstrip";
+        # use difftastic for better diffing
         difftastic.enable = true;
+        # global git config
+        config = {
+          push.autoSetupRemote = true;
+          alias = {
+            b = "branch";
+            co = "checkout";
+            d = "diff";
+            l = "log";
+            p = "push";
+          };
+        };
       };
 
       # yambar status bar
