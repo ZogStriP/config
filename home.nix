@@ -87,7 +87,12 @@
       fastfetch.enable = true;
 
       # text editor
-      vim.enable = true;
+      neovim = {
+        enable = true;
+        defaultEditor = true;
+        vimAlias = true;
+        viAlias = true;
+      };
 
       # fuzzy finder
       fzf.enable = true;
