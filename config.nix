@@ -66,6 +66,10 @@
   # Enable pipewire for audio / video streams
   services.pipewire.enable = true;
 
+  # Use dbus-broker, a better/faster dbus daemon (default in Arch)
+  # https://archlinux.org/news/making-dbus-broker-our-default-d-bus-daemon/
+  services.dbus.implementation = "broker";
+
   # Disable power button
   services.logind.powerKey = "ignore";
 
