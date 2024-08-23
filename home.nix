@@ -57,16 +57,18 @@
         userName = "zogstrip";
         # use difftastic for better diffing
         difftastic.enable = true;
+        # git aliases
+        aliases = {
+          b = "branch";
+          co = "checkout";
+          d = "diff";
+          l = "log";
+          p = "push";
+          s = "status";
+        };
         # global git config
-        config = {
+        extraConfig = {
           push.autoSetupRemote = true;
-          alias = {
-            b = "branch";
-            co = "checkout";
-            d = "diff";
-            l = "log";
-            p = "push";
-          };
         };
       };
 
