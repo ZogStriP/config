@@ -64,7 +64,7 @@
           d = "diff";
           l = "log";
           p = "push";
-          s = "status";
+          st = "status";
         };
         # global git config
         extraConfig = {
