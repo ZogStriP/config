@@ -60,6 +60,9 @@
   # Enable PolKit (required for wayland / river)
   security.polkit.enable = true;
 
+  # Enable RealtimeKit (required for pipewire / pulse)
+  security.rtkit.enable = true;
+
   # Enable TLP for better power management
   services.tlp.enable = true;
 
