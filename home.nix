@@ -127,6 +127,8 @@
         update_ms = 1000;
         # show processes as a tree
         proc_tree = true;
+        # only show these "disks"
+        disks_filter = "/ /boot /nix /tmp /swap";
       };
 
       # better `cat`
