@@ -6,7 +6,6 @@
 
   # Ensure filesystems are mounted in initrd
   # Note: "/", "/nix", and "/var/log" are always `neededForBoot`
-  fileSystems."/home".neededForBoot = true;
   fileSystems."/persist".neededForBoot = true;
 
   disko.devices = {
@@ -39,7 +38,7 @@
               settings.bypassWorkqueues = true;
               content = {
                 type = "btrfs";
-                extraArgs = [ "-L" "nixos" "-f" ];
+                extraArgs = [ "-f" ];
                 subvolumes = {
                   "@nix" = {
                     mountpoint = "/nix";
@@ -66,10 +65,6 @@
     };
     nodev = {
       "/" = {
-        fsType = "tmpfs";
-        mountOptions = [ "size=128M" "defaults" "mode=755" ];
-      };
-      "/home" = {
         fsType = "tmpfs";
         mountOptions = [ "size=128M" "defaults" "mode=755" ];
       };
