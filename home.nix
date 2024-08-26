@@ -163,6 +163,10 @@
           # exit `river`
           "Super+Shift E" = "exit";
         };
+        input.*_Touchpad = {
+          # enable natural scrolling on touchpad
+          natural-scroll = true;
+        };
         # launch some apps when starting
         spawn = [
           # status bar
