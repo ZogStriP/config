@@ -163,7 +163,7 @@
           # exit `river`
           "Super+Shift E" = "exit";
         };
-        input.*_Touchpad = {
+        input."*_Touchpad" = {
           # enable natural scrolling on touchpad
           natural-scroll = true;
         };
