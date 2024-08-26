@@ -41,19 +41,19 @@
                 type = "btrfs";
                 extraArgs = [ "-L" "nixos" "-f" ];
                 subvolumes = {
-                  "/nix" = {
+                  "@nix" = {
                     mountpoint = "/nix";
                     mountOptions = [ "compress=zstd" "noatime" ];
                   };
-                  "/persist" = {
+                  "@persist" = {
                     mountpoint = "/persist";
                     mountOptions = [ "compress=zstd" "noatime" ];
                   };
-                  "/log" = {
+                  "@log" = {
                     mountpoint = "/var/log";
                     mountOptions = [ "compress=zstd" "noatime" ];
                   };
-                  "/swap" = {
+                  "@swap" = {
                     mountpoint = "/swap";
                     swap.swapfile.size = "16G";
                   };
