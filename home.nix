@@ -13,8 +13,8 @@
   users.users.${username} = {
     # Just a regular user
     isNormalUser = true;
-    # No need for a password
-    hashedPassword = "";
+    # `mkpasswd -m yescrypt > /persist/passwd` to generate hash
+    hashedPasswordFile = "/persist/passwd";
     # Can `sudo` and manage network interfaces (LAN, WAN)
     extraGroups = [ "wheel" "networkmanager" ];
   };
