@@ -95,7 +95,7 @@
         defaultEditor = true;
         viAlias = true;
         vimAlias = true;
-        extraConfig = ``
+        extraConfig = ''
           " monochrome theme from https://wickstrom.tech/2024-08-12-a-flexible-minimalist-neovim.html
           set termguicolors
           set bg=dark
@@ -104,7 +104,7 @@
           highlight Comment gui=italic
           highlight Constant guifg=#999999
           highlight NormalFloat guibg=#333333
-        ``;
+        '';
       };
 
       # fuzzy finder
