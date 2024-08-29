@@ -73,7 +73,7 @@
         };
       };
 
-      # yambar status bar
+      # (wayland) status bar
       # https://codeberg.org/dnkl/yambar
       yambar.enable = true;
       yambar.settings.bar = {
