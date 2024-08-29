@@ -66,6 +66,8 @@
           l = "log";
           p = "push";
           st = "status";
+          wip = '"!f() { git add .; git commit --no-verify -m "wip";  }; f"';
+          undo = "reset HEAD~1 --mixed";
         };
         # global git config
         extraConfig = {
