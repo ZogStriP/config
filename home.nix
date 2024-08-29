@@ -151,7 +151,8 @@
       fd.enable = true;
     };
 
-    # river window manager - https://isaacfreund.com/software/river/
+    # (wayland) window manager
+    # https://isaacfreund.com/software/river/
     # TODO: disable xwayland?
     # TODO: compare the following modules
     #   - https://github.com/nix-community/home-manager/blob/master/modules/services/window-managers/river.nix
@@ -175,10 +176,8 @@
           # exit `river`
           "Super+Shift E" = "exit";
         };
-        input."*_Touchpad" = {
-          # enable natural scrolling on touchpad
-          natural-scroll = true;
-        };
+        # enable natural scrolling on touchpad
+        input."*_Touchpad".natural-scroll = true;
         # launch some apps when starting
         spawn = [
           # status bar
