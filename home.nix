@@ -14,7 +14,8 @@
     # Just a regular user
     isNormalUser = true;
     # `mkpasswd -m yescrypt > /persist/passwd` to generate hash
-    hashedPassword = "" # /persist/passwd";
+    hashedPassword = "";
+    # hashedPasswordFile = "/persist/passwd";
     # Can `sudo` and manage network interfaces (LAN, WAN)
     extraGroups = [ "wheel" "networkmanager" ];
   };
