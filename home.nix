@@ -46,6 +46,8 @@
       ncdu # interactive `du`
       duf # better `df`
       hexyl # better `xxd`
+      _1password # password manager (CLI -> `op`)
+      _1password-gui # password manager (GUI)
     ];
 
     # Programs that need configuration
