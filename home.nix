@@ -170,10 +170,14 @@
         background-color = "0x000000";
         # use `rivertile` for layout
         default-layout = "rivertile";
+        # enable natural scrolling on touchpad
+        input."*_Touchpad".natural-scroll = true;
         # keyboard shortcuts
         map.normal = {
           # open new terminal
           "Super Return" = "spawn foot";
+          # open firefox
+          "Super F" = "spawn firefox";
           # close focused view
           "Super Q" = "close";
           # exit `river`
