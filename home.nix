@@ -1,4 +1,4 @@
-{ home-manager, pkgs, username, stateVersion, ... } : {
+{ home-manager, pkgs, lib, username, stateVersion, ... } : {
   imports = [ home-manager.nixosModules.home-manager ];
 
   # Use NixOS nixpkgs & configurations
@@ -58,6 +58,10 @@
       # enable `bash`
       bash.enable = true;
 
+      # setup ssh to use 1password
+      ssh.enable = true;
+      ssh.extraConfig = "IdentityAgent ~/.1password/agent.sock";
+
       # source control
       git.enable = true;
       git = {
@@ -78,7 +82,11 @@
         };
         # global git config
         extraConfig = {
+	  commit.gpgsign = true;
+	  gpg.format = "ssh";
+	  "gpg \"ssh\"" .program = (lib.getExe' pkgs._1password-gui "op-ssh-sign");
           push.autoSetupRemote = true;
+	  user.signingKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIO3naLkQYJ4SP6pk/ZoPWJcUW4hoOoBzy1JoO8I5lpze";
         };
       };
 
