@@ -4,6 +4,9 @@
   # Enable periodic SSD TRIM
   services.fstrim.enable = true;
 
+  # Enable automatic BTRFS scrubbing
+  services.btrfs.autoScrub.enable = true;
+
   # Ensure filesystems are mounted in initrd
   # Note: "/", "/nix", and "/var/log" are always `neededForBoot`
   fileSystems."/persist".neededForBoot = true;
