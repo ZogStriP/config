@@ -13,10 +13,6 @@
   users.users.${username} = {
     # Just a regular user
     isNormalUser = true;
-    # Define static account UID & group GID
-    # Reserved IDs - https://github.com/NixOS/nixpkgs/blob/master/nixos/modules/misc/ids.nix
-    uid = 1000;
-    gid = 1000;
     # `mkpasswd -m yescrypt > /persist/passwd` to generate hash
     hashedPassword = "";
     # hashedPasswordFile = "/persist/passwd";
