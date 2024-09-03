@@ -46,7 +46,6 @@
       ncdu # interactive `du`
       duf # better `df`
       hexyl # better `xxd`
-      croc # securely share stuff between computers
     ];
 
     # Programs that need configuration
