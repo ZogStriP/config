@@ -16,6 +16,8 @@
     # `mkpasswd -m yescrypt > /persist/passwd` to generate hash
     hashedPassword = "";
     # hashedPasswordFile = "/persist/passwd";
+    # Create a `zogstrip` group
+    group = username;
     # Can `sudo` and manage network interfaces (LAN, WAN)
     extraGroups = [ "wheel" "networkmanager" ];
   };
