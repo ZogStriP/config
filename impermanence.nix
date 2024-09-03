@@ -1,4 +1,4 @@
-{ impermanence, ... } : {
+{ impermanence, username, ... } : {
   imports = [ impermanence.nixosModules.impermanence ];
 
   environment.persistence."/persist" = {
@@ -13,4 +13,9 @@
       "/etc/machine-id"
     ];
   };
+
+  systemd.tmpfiles.rules = [
+    # Create a persisted "home" directory for `zogstrip`
+    "d /persist/z 0700 ${username} ${username} -"
+  ];
 }
