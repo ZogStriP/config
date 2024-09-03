@@ -85,6 +85,10 @@
   # Remove nano
   programs.nano.enable = false;
 
+  # Enable default fonts
+  # cf. https://github.com/NixOS/nixpkgs/blob/12228ff1752d7b7624a54e9c1af4b222b3c1073b/nixos/modules/config/fonts/packages.nix#L35-L40
+  fonts.enableDefaultPackages = true;
+
   # Allow 1password "unfree" packages
   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem(lib.getName pkg) [
     "1password-cli"
