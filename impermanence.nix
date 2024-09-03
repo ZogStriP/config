@@ -13,4 +13,7 @@
       "/etc/machine-id"
     ];
   };
+
+  # Create a persisted "home" directory for `zogstrip`
+  systemd.tmpfiles.rules = [ "d /persist/z 0700 1000 1000 -" ];
 }
