@@ -205,6 +205,8 @@
           "'rivertile -view-padding 0 -outer-padding 0'"
           # terminal emulator
           "foot"
+          # 1password (background)
+          "'1password --silent'"
         ];
       };
     };
