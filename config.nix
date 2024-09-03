@@ -1,4 +1,4 @@
-{ pkgs, hostname, stateVersion, ... } : {
+{ pkgs, lib, hostname, stateVersion, ... } : {
   # Various open source drivers
   hardware.enableRedistributableFirmware = true;
   
@@ -84,6 +84,12 @@
 
   # Remove nano
   programs.nano.enable = false;
+
+  # Allow 1password "unfree" packages
+  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem(lib.getName pkg) [
+    "1password-cli"
+    "1password"
+  ];
 
   # Disable nix channels
   nix.channel.enable = false;
