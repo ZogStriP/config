@@ -20,6 +20,11 @@
       directories = [
         ".config/1Password"
       ];
+
+      # require user files
+      files = [
+        ".ssh/known_hosts"
+      ];
     };
   };
 
