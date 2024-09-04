@@ -18,14 +18,10 @@
     users.${username} = {
       # required user directories
       directories = [
+        ".config/1Password"
         ".local/share/atuin"
         ".local/share/zoxide"
-        ".config/1Password"
-      ];
-
-      # require user files
-      files = [
-        ".ssh/known_hosts"
+        ".ssh"
       ];
     };
   };
