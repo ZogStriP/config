@@ -131,6 +131,18 @@
           highlight Comment gui=italic
           highlight Constant guifg=#999999
           highlight NormalFloat guibg=#333333
+
+          " shows current line number
+          set number
+          " shows relative numbers
+          set relativenumber
+
+          " convert spaces to tabs
+          set expandtab
+          " 2 spaces for each step of (auto)indent
+          set shiftwidth=2
+          " 2 spaces for <tab> or <del>
+          set softtabstop=2
         '';
       };
 
