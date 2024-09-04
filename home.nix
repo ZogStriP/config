@@ -1,4 +1,4 @@
-{ home-manager, pkgs, lib, username, stateVersion, ... } : {
+{ home-manager, nixvim, pkgs, lib, username, stateVersion, ... } : {
   imports = [ home-manager.nixosModules.home-manager ];
 
   # Use NixOS nixpkgs & configurations
@@ -33,6 +33,8 @@
 
   # zogstrip's home configuration
   home-manager.users.${username} = {
+    imports = [ nixvim.homeManagerModules.nixvim ];
+
     home.username = username;
     home.homeDirectory = "/home/${username}";
 
@@ -117,33 +119,24 @@
       fastfetch.enable = true;
 
       # text editor
-      neovim = {
+      # TODO: monochrome theme from https://wickstrom.tech/2024-08-12-a-flexible-minimalist-neovim.html
+      nixvim = {
         enable = true;
         defaultEditor = true;
         viAlias = true;
         vimAlias = true;
-        extraConfig = ''
-          " monochrome theme from https://wickstrom.tech/2024-08-12-a-flexible-minimalist-neovim.html
-          set termguicolors
-          set bg=dark
-          colorscheme quiet
-          highlight Keyword gui=bold
-          highlight Comment gui=italic
-          highlight Constant guifg=#999999
-          highlight NormalFloat guibg=#333333
-
-          " shows current line number
-          set number
-          " shows relative numbers
-          set relativenumber
-
-          " convert spaces to tabs
-          set expandtab
-          " 2 spaces for each step of (auto)indent
-          set shiftwidth=2
-          " 2 spaces for <tab> or <del>
-          set softtabstop=2
-        '';
+        opts = {
+          # show current line number
+          number = true;
+          # show relative numbers
+          relativenumber = true;
+          # convert spaces to tabs
+          expandtab = true;
+          # 2 spaces for each "indent"
+          shiftwidth = 2;
+          # 2 spaces for <tab> or <del>
+          softtabstop = 2;
+        };
       };
 
       # fuzzy finder
