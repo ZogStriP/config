@@ -85,7 +85,7 @@
           gpg.ssh.program = (lib.getExe' pkgs._1password-gui "op-ssh-sign");
           push.autoSetupRemote = true;
           user = {
-            name = "zogstrip";
+            name = username;
             email = "regis@hanol.fr";
             signingKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIO3naLkQYJ4SP6pk/ZoPWJcUW4hoOoBzy1JoO8I5lpze";
           };
