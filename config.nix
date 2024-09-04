@@ -39,12 +39,6 @@
   # Machine's name
   networking.hostName = hostname;
 
-  # Enable network manager
-  networking.networkmanager.enable = true;
-
-  # Use `iwd` instead of `wpa_supplicant` for managing WiFi
-  networking.networkmanager.wifi.backend = "iwd";
-
   # Machine's timezone
   time.timeZone = "Europe/Paris";
 

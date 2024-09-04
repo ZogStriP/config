@@ -21,8 +21,8 @@
     # hashedPasswordFile = "/persist/passwd";
     # Set the `zogstrip` group
     group = username;
-    # Can `sudo` and manage network interfaces (LAN, WAN)
-    extraGroups = [ "wheel" "networkmanager" ];
+    # Can `sudo`
+    extraGroups = [ "wheel" ];
   };
 
   # Install 1password CLI & GUI from NixOS instead of Home-Manager
