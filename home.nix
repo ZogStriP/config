@@ -86,7 +86,7 @@
         extraConfig = {
           commit.gpgsign = true;
           gpg.format = "ssh";
-          gpg.ssh.program = (lib.getExe' pkgs._1password-gui "op-ssh-sign");
+          gpg.ssh.program = lib.getExe' pkgs._1password-gui "op-ssh-sign";
           push.autoSetupRemote = true;
           user = {
             name = username;
