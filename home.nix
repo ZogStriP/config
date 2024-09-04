@@ -25,6 +25,12 @@
     extraGroups = [ "wheel" "networkmanager" ];
   };
 
+  # Install 1password CLI & GUI from NixOS instead of Home-Manager
+  # NOTE: otherwise `op` wasn't connecting with 1password
+  programs._1password.enable = true;
+  programs._1password-gui.enable = true;
+  programs._1password-gui.polkitPolicyOwners = [ username ];
+
   # zogstrip's home configuration
   home-manager.users.${username} = {
     home.username = username;
@@ -46,8 +52,6 @@
       ncdu # interactive `du`
       duf # better `df`
       hexyl # better `xxd`
-      _1password # password manager (CLI -> `op`)
-      _1password-gui # password manager (GUI)
     ];
 
     # Programs that need configuration
