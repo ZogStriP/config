@@ -60,7 +60,7 @@
 
       # setup ssh to use 1password
       ssh.enable = true;
-      ssh.extraConfig = "IdentityAgent ~/.1password/agent.sock";
+      ssh.extraConfig.IdentityAgent = "~/.1password/agent.sock";
 
       # source control
       git.enable = true;
