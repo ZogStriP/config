@@ -58,7 +58,7 @@
       # enable `bash`
       bash.enable = true;
 
-      # setup ssh to use 1password
+      # setup ssh to use 1password SSH agent
       ssh.enable = true;
       ssh.matchBlocks."*".extraConfig.IdentityAgent = "~/.1password/agent.sock";
 
