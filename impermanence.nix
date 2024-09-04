@@ -18,6 +18,8 @@
     users.${username} = {
       # required user directories
       directories = [
+        ".local/share/atuin"
+        ".local/share/zoxide"
         ".config/1Password"
       ];
 
