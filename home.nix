@@ -127,9 +127,6 @@
           highlight Comment gui=italic
           highlight Constant guifg=#999999
           highlight NormalFloat guibg=#333333
-	  " tabs begone
-	  set tabstop=2
-	  set expandtab
         '';
       };
 
