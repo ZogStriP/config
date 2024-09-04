@@ -108,6 +108,10 @@
       # (wayland) terminal emulator
       # https://codeberg.org/dnkl/foot
       foot.enable = true;
+      foot.settings = {
+        # black background
+        colors.background = "000000";
+      };
 
       # system informations (better `neofetch`)
       fastfetch.enable = true;
