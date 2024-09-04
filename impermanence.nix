@@ -4,14 +4,23 @@
   environment.persistence."/persist" = {
     hideMounts = true;
 
+    # required system directories
     directories = [
       "/var/lib/nixos"
       "/var/lib/systemd"
     ];
 
+    # required system files
     files = [
       "/etc/machine-id"
     ];
+
+    users.${username} = {
+      # required user directories
+      directories = [
+        ".config/1Password"
+      ];
+    };
   };
 
   # Create a persisted "home" directory for `zogstrip`
