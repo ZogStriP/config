@@ -119,13 +119,20 @@
       fastfetch.enable = true;
 
       # text editor
-      # TODO: monochrome theme from https://wickstrom.tech/2024-08-12-a-flexible-minimalist-neovim.html
+      # monochrome theme from https://wickstrom.tech/2024-08-12-a-flexible-minimalist-neovim.html
       nixvim = {
         enable = true;
         defaultEditor = true;
         viAlias = true;
         vimAlias = true;
         colorscheme = "quiet";
+        # TODO: find a way to use 'nix' to configure these?
+        extraConfigVim = ''
+          highlight Keyword gui=bold
+          highlight Comment gui=italic
+          highlight Constant guifg=#999999
+          highlight NormalFloat guibg=#333333
+        '';
         opts = {
           # show current line number
           number = true;
