@@ -63,10 +63,8 @@
       ssh.extraConfig.IdentityAgent = "~/.1password/agent.sock";
 
       # source control
-      git.enable = true;
       git = {
-        userEmail = "regis@hanol.fr";
-        userName = "zogstrip";
+        enable = true;
         # use difftastic for better diffing
         difftastic.enable = true;
         # git aliases
@@ -84,9 +82,13 @@
         extraConfig = {
           commit.gpgsign = true;
           gpg.format = "ssh";
-          "gpg \"ssh\"" .program = (lib.getExe' pkgs._1password-gui "op-ssh-sign");
+          gpg.ssh.program = (lib.getExe' pkgs._1password-gui "op-ssh-sign");
           push.autoSetupRemote = true;
-          user.signingKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIO3naLkQYJ4SP6pk/ZoPWJcUW4hoOoBzy1JoO8I5lpze";
+          user = {
+            name = "zogstrip";
+            email = "regis@hanol.fr";
+            signingKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIO3naLkQYJ4SP6pk/ZoPWJcUW4hoOoBzy1JoO8I5lpze";
+          };
         };
       };
 
