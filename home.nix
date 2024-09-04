@@ -125,6 +125,7 @@
         defaultEditor = true;
         viAlias = true;
         vimAlias = true;
+        colorscheme = "quiet";
         opts = {
           # show current line number
           number = true;
