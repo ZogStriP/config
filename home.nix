@@ -9,7 +9,7 @@
   # Automatically login zogstrip
   services.getty.autologinUser = username;
 
-  # Create a zogstrip group
+  # zogstrip's group
   users.groups.${username} = {};
 
   # zogstrip's user account
