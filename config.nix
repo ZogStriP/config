@@ -95,6 +95,9 @@
   # Allow "flakes" system-wide
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
+  # Remove all "dirty repository" warnings
+  nix.settings.warn-dirty = false;
+
   # NixOS version this flake was initially created on
   system.stateVersion = stateVersion;
 }
