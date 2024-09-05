@@ -47,12 +47,6 @@
       "..." = "cd ../..";
     };
 
-    # Some session variables
-    home.sessionVariables = {
-      BROWSER = "firefox";
-      GTK_THEME = "dark";
-    };
-
     # Programs that don't need configuration
     home.packages = with pkgs; [
       curl
