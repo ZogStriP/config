@@ -56,6 +56,10 @@
       hexyl # better `xxd`
     ];
 
+    # Configure dark mode for GTK3 applications
+    gtk.enable = true;
+    gtk.gtk3.extraConfig.gtk-application-prefer-dark-theme = true;
+
     # Programs that need configuration
     programs = {
       # Let home manager manage itself
