@@ -8,6 +8,7 @@
     directories = [
       "/var/lib/nixos"
       "/var/lib/systemd"
+      "/var/lib/fprint/${username}"
     ];
 
     # required system files

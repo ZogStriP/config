@@ -57,6 +57,11 @@
   # Enable RealtimeKit (required for pipewire / pulse)
   security.rtkit.enable = true;
 
+  # Enable fingerprint reader
+  # Enroll with `sudo fprintd-enroll zogstrip`
+  # Verify with `fprintd-verify`
+  services.fprintd.enable = true;
+
   # Enable TLP for better power management
   services.tlp.enable = true;
 
