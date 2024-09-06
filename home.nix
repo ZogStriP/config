@@ -213,6 +213,8 @@
         default-layout = "rivertile";
         # enable natural scrolling on touchpad
         input."*_Touchpad".natural-scroll = true;
+        # remove borders
+        border-width = 0;
         # keyboard shortcuts
         map.normal = {
           # open new terminal
