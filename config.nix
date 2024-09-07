@@ -39,6 +39,9 @@
   # Machine's name
   networking.hostName = hostname;
 
+  # Use networkd to configure networks
+  networking.useNetworkd = true;
+
   # Machine's timezone
   time.timeZone = "Europe/Paris";
 
