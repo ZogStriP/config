@@ -39,6 +39,15 @@
   # Machine's name
   networking.hostName = hostname;
 
+  # Enable NetworkManager
+  networking.networkmanager.enable = true;
+
+  # Use `iwd` for WiFi
+  networking.networkmanager.wifi.backend = "iwd";
+
+  # Disable wait-online target for faster boot
+  systemd.network.wait-online.enable = false;
+
   # Machine's timezone
   time.timeZone = "Europe/Paris";
 

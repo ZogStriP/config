@@ -22,7 +22,7 @@
     # Set the `zogstrip` group
     group = username;
     # Can `sudo`
-    extraGroups = [ "wheel" ];
+    extraGroups = [ "wheel" "networkmanager" ];
   };
 
   # Install 1password CLI & GUI from NixOS instead of Home-Manager

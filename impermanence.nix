@@ -8,7 +8,8 @@
     directories = [
       "/var/lib/nixos"
       "/var/lib/systemd"
-      "/var/lib/fprint/${username}"
+      "/var/lib/fprint/${username}" # fingerprints
+      "/var/lib/iwd" # WiFi connections
     ];
 
     # required system files
