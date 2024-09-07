@@ -77,6 +77,9 @@
   # Enable pipewire for audio / video streams
   services.pipewire.enable = true;
 
+  # Enable ALSA support for audio
+  services.pipewire.alsa.enable = true;
+
   # Use dbus-broker, a better/faster dbus daemon (default in Arch)
   # https://archlinux.org/news/making-dbus-broker-our-default-d-bus-daemon/
   services.dbus.implementation = "broker";
