@@ -183,6 +183,10 @@
         proc_tree = true;
         # only show these "disks"
         disks_filter = "/ /boot /nix /tmp /swap";
+        # use hjkl to navigate
+        vim_keys = true;
+        # square corners look better
+        rounded_corners = false;
       };
 
       # better `cat`
