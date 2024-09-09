@@ -107,14 +107,6 @@
         };
       };
 
-      # (wayland) status bar
-      # https://codeberg.org/dnkl/yambar
-      yambar.enable = true;
-      yambar.settings.bar = {
-        height = 26;
-        location = "bottom";
-        background = "000000FF";
-      };
 
       # (wayland) terminal emulator
       # https://codeberg.org/dnkl/foot
@@ -327,8 +319,6 @@
         rule-add."-app-id"."'firefox'".tags = 2;
         # launch some apps when starting
         spawn = [
-          # status bar
-          "yambar"
           # layout manager
           "'rivertile -view-padding 0 -outer-padding 0'"
           # terminal emulator
