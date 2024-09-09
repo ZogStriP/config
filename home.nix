@@ -201,7 +201,6 @@
 
     # (wayland) window manager
     # https://isaacfreund.com/software/river/
-    # TODO: disable xwayland?
     # TODO: compare the following modules
     #   - https://github.com/nix-community/home-manager/blob/master/modules/services/window-managers/river.nix
     #   - https://github.com/NixOS/nixpkgs/blob/nixos-unstable/nixos/modules/programs/wayland/river.nix
@@ -209,6 +208,7 @@
       # enable `river` wm
       enable = true;
       # DOC: https://codeberg.org/river/river/src/branch/master/doc/riverctl.1.scd
+      # TUTO: https://leon_plickat.srht.site/writing/river-setup-guide/article.html
       # EXAMPLE: https://codeberg.org/river/river/src/branch/master/example/init
       settings = {
         # black background
@@ -221,6 +221,29 @@
         border-width = 0;
         # keyboard shortcuts
         map.normal = {
+          ### Function keys
+          # (F1) Mute
+          "None XF86AudioMute" = "spawn 'wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle'";
+          # (F2) Lower volume
+          "None XF86AudioLowerVolume" = "spawn 'wpctl set-volume @DEFAULT_AUDIO_SINK@ 3%-'";
+          # (F3) Raise volume
+          "None XF86AudioRaiseVolume" = "spawn 'wpctl set-volume @DEFAULT_AUDIO_SINK@ 3%+'";
+          # (F4) TODO: Previous
+          # "None XF86AudioPrev" = "spawn ''";
+          # (F5) TODO: Play/Pause
+          # "None XF86AudioPlay" = "spawn ''";
+          # (F6) TODO: Next
+          # "None XF86AudioNext" = "spawn ''";
+          # (F7) TODO: Brightness down
+          # "None XF86MonBrightnessDown" = "spawn ''";
+          # (F8) TODO: Brightness up
+          # "None XF86MonBrightnessUp" = "spawn ''";
+          # (F9) <not used>
+          # (F10) Plane mode
+          "None XF86RFKill" = "spawn 'rfkill toggle wlan'";
+          # (F11) TODO: <print screen>
+          # (F12) <not used>
+          ### Regular shortcuts
           # open new terminal
           "Super Return" = "spawn foot";
           # open firefox
