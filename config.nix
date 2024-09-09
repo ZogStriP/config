@@ -12,6 +12,10 @@
     # Use latest kernel
     kernelPackages = pkgs.linuxPackages_latest;
 
+    # disable the 'hid-sensor-hub' module so it doesn't interfere with function/media keys
+    # cf. https://community.frame.work/t/20675/391
+    blacklistedKernelModules = [ "hid-sensor-hub" ];
+
     # Disable bcache support in initrd
     bcache.enable = false;
 
