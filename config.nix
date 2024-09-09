@@ -15,9 +15,11 @@
     # Use latest kernel
     kernelPackages = pkgs.linuxPackages_latest;
 
-    # disable the 'hid-sensor-hub' module so it doesn't interfere with function/media keys
-    # cf. https://community.frame.work/t/20675/391
-    blacklistedKernelModules = [ "hid-sensor-hub" ];
+    # Disable loading these modules during boot (so they don't trigger errors)
+    blacklistedKernelModules = [ 
+      "cros-usbpd-charger" # not used by frame.work EC and causes boot time error log
+      "hid-sensor-hub" # prevent interferences with fn/media keys - https://community.frame.work/t/20675/391
+    ];
 
     # Disable bcache support in initrd
     bcache.enable = false;
