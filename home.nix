@@ -226,8 +226,8 @@
           "None XF86AudioMute" = "spawn 'wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle'";
           # (F2) Lower volume
           "None XF86AudioLowerVolume" = "spawn 'wpctl set-volume @DEFAULT_AUDIO_SINK@ 3%-'";
-          # (F3) Raise volume
-          "None XF86AudioRaiseVolume" = "spawn 'wpctl set-volume @DEFAULT_AUDIO_SINK@ 3%+'";
+          # (F3) Raise volume (maximum 100%)
+          "None XF86AudioRaiseVolume" = "spawn 'wpctl set-volume @DEFAULT_AUDIO_SINK@ 3%+ --limit 1'";
           # (F4) TODO: Previous
           # "None XF86AudioPrev" = "spawn ''";
           # (F5) TODO: Play/Pause
