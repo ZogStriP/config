@@ -53,11 +53,12 @@
 
     # Programs that don't need configuration
     home.packages = with pkgs; [
-      curl
-      dust # better `du`
-      ncdu # interactive `du`
+      curl # making requests
       duf # better `df`
+      dust # better `du`
       hexyl # better `xxd`
+      ncdu # interactive `du`
+      zeal # offline doc
     ];
 
     # Configure dark mode for GTK3 applications
