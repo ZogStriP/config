@@ -85,10 +85,8 @@
         # git aliases
         aliases = {
           b = "branch";
+          br = "branch";
           co = "checkout";
-          d = "diff";
-          l = "log";
-          p = "push";
           st = "status";
           wip = "!f() { git add .; git commit --no-verify -m 'wip'; }; f";
           undo = "reset HEAD~1 --mixed";
@@ -99,6 +97,8 @@
           gpg.format = "ssh";
           gpg.ssh.program = lib.getExe' pkgs._1password-gui "op-ssh-sign";
           push.autoSetupRemote = true;
+          # always push using SSH - https://www.jvt.me/posts/2019/03/20/git-rewrite-url-https-ssh/
+          url."ssh://git@github.com/".pushInsteadOf = "https://github.com/";
           user = {
             name = username;
             email = "regis@hanol.fr";
