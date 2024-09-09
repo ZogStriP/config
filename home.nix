@@ -315,8 +315,13 @@
           "Super Left" = "send-layout-cmd rivertile 'main-ratio -0.05'";
           "Super Right" = "send-layout-cmd rivertile 'main-ratio +0.05'";
         };
-        # ensures firefox always start on tag 2
-        rule-add."-app-id"."'firefox'".tags = 2;
+        # Add some rules based on "app-id"
+        rule-add."-app-id" = {
+          # ensures firefox always start on tag 2
+          "'firefox'".tags = 2;
+          # ensures 1password is always floating
+          "'1Password'" = "float";
+        };
         # launch some apps when starting
         spawn = [
           # layout manager
