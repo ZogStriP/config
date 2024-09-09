@@ -148,6 +148,10 @@
           shiftwidth = 2;
           # 2 spaces for <tab> or <del>
           softtabstop = 2;
+          # case insensitive search by default
+          ignorecase = true;
+          # case sensitive search only when there's an uppercase character
+          smartcase = true;
         };
       };
 
