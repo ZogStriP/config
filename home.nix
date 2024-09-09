@@ -248,7 +248,7 @@
           "None XF86MonBrightnessUp" = "spawn 'xbacklight +5'";
           # (F9) <not used>
           # (F10) Plane mode
-          "None XF86RFKill" = "spawn 'rfkill toggle wlan'";
+          # "None XF86RFKill" = "spawn 'rfkill toggle wlan'";
           # (F11) TODO: <print screen>
           # (F12) <not used>
           ### Regular shortcuts
