@@ -17,6 +17,8 @@
 
     # Disable loading these modules during boot (so they don't trigger errors)
     blacklistedKernelModules = [ 
+      "cros_ec_lpcs" # TODO: figure out what they do
+      "cros_ec_gpio" # TODO: figure out what they do
       "cros-usbpd-charger" # not used by frame.work EC and causes boot time error log
       "hid-sensor-hub" # prevent interferences with fn/media keys - https://community.frame.work/t/20675/391
     ];
