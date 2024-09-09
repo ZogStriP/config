@@ -229,7 +229,9 @@
         border-width = 0;
         # keyboard shortcuts
         map.normal = {
+          ###
           ### Function keys
+          ###
           # (F1) Mute
           "None XF86AudioMute" = "spawn 'wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle'";
           # (F2) Lower volume
@@ -243,15 +245,17 @@
           # (F6) TODO: Next
           # "None XF86AudioNext" = "spawn ''";
           # (F7) Brightness down
-          "None XF86MonBrightnessDown" = "spawn 'xbacklight -5'";
+          "None XF86MonBrightnessDown" = "spawn 'xbacklight -2 -perceived'";
           # (F8) Brightness up
-          "None XF86MonBrightnessUp" = "spawn 'xbacklight +5'";
+          "None XF86MonBrightnessUp" = "spawn 'xbacklight +2 -perceived'";
           # (F9) <not used>
           # (F10) Plane mode
           # "None XF86RFKill" = "spawn 'rfkill toggle wlan'";
           # (F11) TODO: <print screen>
           # (F12) <not used>
+          ###
           ### Regular shortcuts
+          ###
           # open new terminal
           "Super Return" = "spawn foot";
           # open firefox
@@ -260,7 +264,66 @@
           "Super Q" = "close";
           # exit `river`
           "Super+Shift E" = "exit";
+          ###
+          ### Tag management
+          ###
+          # show 'workspace' X
+          "Super 1" = "set-focused-tags 1";
+          "Super 2" = "set-focused-tags 2";
+          "Super 3" = "set-focused-tags 4";
+          "Super 4" = "set-focused-tags 8";
+          # send <focused view> to 'workspace' X
+          "Super+Shift 1" = "set-view-tags 1";
+          "Super+Shift 2" = "set-view-tags 2";
+          "Super+Shift 3" = "set-view-tags 4";
+          "Super+Shift 4" = "set-view-tags 8";
+          # bring 'workspace' X into view
+          "Super+Alt 1" = "toggle-focused-tags 1";
+          "Super+Alt 2" = "toggle-focused-tags 2";
+          "Super+Alt 3" = "toggle-focused-tags 4";
+          "Super+Alt 4" = "toggle-focused-tags 8";
+          ###
+          ### Window management
+          ###
+          # focus views
+          "Super H" = "focus-view left";
+          "Super J" = "focus-view down";
+          "Super K" = "focus-view up";
+          "Super L" = "focus-view right";
+          "Super p" = "focus-view previous";
+          "Super n" = "focus-view next";
+          # Toggle float (on focused view)
+          "Super+Shift F" = "toggle-float";
+          # swap focus
+          "Super+Shift H" = "swap left";
+          "Super+Shift J" = "swap down";
+          "Super+Shift K" = "swap up";
+          "Super+Shift L" = "swap right";
+          "Super+Shift n" = "swap previous";
+          "Super+Shift p" = "swap next";
+          # move floating views
+          "Super+Alt H" = "move left 50";
+          "Super+Alt J" = "move down 50";
+          "Super+Alt K" = "move up 50";
+          "Super+Alt L" = "move right 50";
+          # snap floating views
+          "Super+Alt+Control H" = "snap left";
+          "Super+Alt+Control J" = "snap down";
+          "Super+Alt+Control K" = "snap up";
+          "Super+Alt+Control L" = "snap right";
+          # resize floating views
+          "Super+Alt+Shift H" = "resize horizontal -50";
+          "Super+Alt+Shift J" = "resize vertical 50";
+          "Super+Alt+Shift K" = "resize vertical -50";
+          "Super+Alt+Shift L" = "resize horizontal 50";
+          ###
+          ### Layout management
+          ###
+          "Super Left" = "send-layout-cmd rivertile 'main-ratio -0.05'";
+          "Super Right" = "send-layout-cmd rivertile 'main-ratio +0.05'";
         };
+        # ensures firefox always start on tag 2
+        rule-add."-app-id"."'firefox'".tags = 2;
         # launch some apps when starting
         spawn = [
           # status bar
