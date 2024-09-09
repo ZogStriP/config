@@ -8,6 +8,9 @@
   # Enable hardware accelerated graphics drivers
   hardware.graphics.enable = true;
 
+  # Allow brightness control via `xbacklight` for users in `video` group
+  hardware.acpilight.enable = true;
+
   boot = {
     # Use latest kernel
     kernelPackages = pkgs.linuxPackages_latest;

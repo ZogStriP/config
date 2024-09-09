@@ -22,7 +22,11 @@
     # Set the `zogstrip` group
     group = username;
     # Can `sudo`
-    extraGroups = [ "wheel" "networkmanager" ];
+    extraGroups = [ 
+      "networkmanager" # wifi
+      "video" # brightness
+      "wheel" # sudo 
+    ];
   };
 
   # Install 1password CLI & GUI from NixOS instead of Home-Manager
@@ -238,10 +242,10 @@
           # "None XF86AudioPlay" = "spawn ''";
           # (F6) TODO: Next
           # "None XF86AudioNext" = "spawn ''";
-          # (F7) TODO: Brightness down
-          # "None XF86MonBrightnessDown" = "spawn ''";
-          # (F8) TODO: Brightness up
-          # "None XF86MonBrightnessUp" = "spawn ''";
+          # (F7) Brightness down
+          "None XF86MonBrightnessDown" = "spawn 'xbacklight -5'";
+          # (F8) Brightness up
+          "None XF86MonBrightnessUp" = "spawn 'xbacklight +5'";
           # (F9) <not used>
           # (F10) Plane mode
           "None XF86RFKill" = "spawn 'rfkill toggle wlan'";
