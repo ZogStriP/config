@@ -21,8 +21,10 @@
       # required user directories
       directories = [
         ".config/1Password"
-        ".local/share/atuin"
-        ".local/share/zoxide"
+        ".local/share/atuin" # command lines database
+        ".local/share/zoxide" # command lines history
+        ".local/share/Zeal" # where zeal stores docsets
+        ".cache/Zeal" # tmp files
         ".ssh"
       ];
     };
