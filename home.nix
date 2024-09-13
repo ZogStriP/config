@@ -160,6 +160,33 @@
 
       # web browser
       firefox.enable = true;
+      firefox.policies = {
+        DisableAccounts = true;
+        # TODO: Extensions
+        # TODO: ExtensionSettings
+      };
+      firefox.profiles.${username} = {
+        id = 0;
+        name = username;
+        settings = {
+          "app.shield.optoutstudies.enabled" = true;
+          "browser.aboutConfig.showWarning" = false;
+          "browser.discovery.enabled" = false;
+          "browser.newtabpage.enabled" = false;
+          "browser.startup.blankWindow" = true;
+          "browser.startup.firstrunSkipsHomepage" = true;
+          "browser.startup.homepage" = "about:blank";
+          "browser.toolbars.bookmarks.visibility" = "never";
+          "browser.translations.automaticallyPopup" = false;
+          "datareporting.healthreport.uploadEnabled" = false;
+          "datareporting.policy.dataSubmissionEnabled" = false;
+          "datareporting.policy.firstRunURL" = "";
+          "extensions.pocket.enabled" = false;
+          "privacy.donottrackheader.enabled" = true;
+          "privacy.globalprivacycontrol.enabled" = true;
+          "startup.homepage_welcome_url" = "about:blank";
+        };
+      };
 
       # media player
       mpv.enable = true;
