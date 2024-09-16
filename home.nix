@@ -73,7 +73,9 @@
       # enable `bash`
       bash.enable = true;
       # automatically launch `river` when login in on tty1
-      bash.profileExtra = "[[ -z $DISPLAY && $(tty) = /dev/tty1 ]] && exec river";
+      bash.profileExtra = ''
+        [[ -z "$WAYLAND_DISPLAY" && $(tty) = "/dev/tty1" ]] && exec river > ~/.river.log 2>&1
+      '';
 
       # setup ssh to use 1password SSH agent
       ssh.enable = true;
