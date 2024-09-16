@@ -182,6 +182,11 @@
           "browser.startup.homepage" = "about:blank";
           "browser.toolbars.bookmarks.visibility" = "never";
           "browser.translations.automaticallyPopup" = false;
+          "browser.urlbar.suggest.searches" = false;
+          "browser.urlbar.suggest.topsites" = false;
+          "browser.urlbar.suggest.trending" = false;
+          "browser.urlbar.suggest.weather" = false;
+          "browser.urlbar.suggest.yelp" = false;
           "datareporting.healthreport.uploadEnabled" = false;
           "datareporting.policy.dataSubmissionEnabled" = false;
           "datareporting.policy.firstRunURL" = "";
