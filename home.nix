@@ -62,6 +62,10 @@
     gtk.enable = true;
     gtk.gtk3.extraConfig.gtk-application-prefer-dark-theme = true;
 
+    # Configure dark mode for Qt applications
+    qt.enable = true;
+    qt.style.name = "adwaita-dark";
+
     # Programs that need configuration
     programs = {
       # Let home manager manage itself
