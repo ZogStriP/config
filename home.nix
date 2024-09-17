@@ -363,9 +363,11 @@
         # Add some rules based on "app-id"
         rule-add."-app-id" = {
           # ensures firefox always start on tag 2
-          "'firefox'".tags = 2;
+          firefox.tags = 2;
+          # ensures zeal always start on tag 3
+          "org.zealdocs.zeal".tags = 4;
           # ensures 1password is always floating
-          "'1Password'" = "float";
+          "1Password" = "float";
         };
         # launch some apps when starting
         spawn = [
