@@ -1,4 +1,4 @@
-{ pkgs, lib, hostname, stateVersion, ... } : {
+{ pkgs, lib, hostname, username, stateVersion, ... } : {
   # Various open source drivers
   hardware.enableRedistributableFirmware = true;
   
@@ -103,6 +103,11 @@
     evdev:atkbd:*
       KEYBOARD_KEY_3a=esc
   '';
+
+  services.greetd.enable = true;
+  services.greetd.settings.default_session.command = "${pkgs.greetd.greetd}/bin/agreety --cmd ${pkgs.bashInteractive}/bin/bash";
+  services.greetd.settings.initial_session.user = username;
+  services.greetd.settings.initial_session.command = "river > ~/.river.log 2>&1";
 
   # Remove nano
   programs.nano.enable = false;
