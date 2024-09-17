@@ -71,6 +71,9 @@
   # Don't ask for password when `sudo`-ing
   security.sudo.wheelNeedsPassword = false;
 
+  # Only members of `wheel` group can execute `sudo`
+  security.sudo.execWheelOnly = true;
+
   # Enable PolKit (required for wayland / river)
   security.polkit.enable = true;
 
