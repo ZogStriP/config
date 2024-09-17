@@ -294,6 +294,10 @@
           "Super Return" = "spawn foot";
           # open firefox
           "Super F" = "spawn firefox";
+          # open 1Password's quick access
+          "Super O" = "spawn '1password --quick-access'";
+          # open zeal
+          "Super Z" = "spawn zeal";
           # close focused view
           "Super Q" = "close";
           # exit `river`
