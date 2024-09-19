@@ -26,7 +26,8 @@
               format = "vfat";
               mountpoint = "/boot";
               # Ensure the /boot partition isn't world-readable
-              # cf. https://github.com/NixOS/nixpkgs/pull/300673
+              # https://github.com/NixOS/nixpkgs/pull/300673
+              # https://github.com/nix-community/disko/issues/527
               mountOptions = [ "umask=077" ];
             };
           };
