@@ -116,7 +116,7 @@
   programs.nano.enable = false;
 
   # Enable default fonts
-  # cf. https://github.com/NixOS/nixpkgs/blob/12228ff1752d7b7624a54e9c1af4b222b3c1073b/nixos/modules/config/fonts/packages.nix#L35-L40
+  # https://github.com/NixOS/nixpkgs/blob/12228ff1752d7b7624a54e9c1af4b222b3c1073b/nixos/modules/config/fonts/packages.nix#L35-L40
   fonts.enableDefaultPackages = true;
 
   # Allow 1password "unfree" packages
@@ -128,11 +128,14 @@
   # Disable nix channels
   nix.channel.enable = false;
 
-  # Allow "flakes" system-wide
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
-
-  # Remove all "dirty repository" warnings
-  nix.settings.warn-dirty = false;
+  nix.settings = {
+    # Allow "flakes" system-wide
+    experimental-features = [ "nix-command" "flakes" ];
+    # All members of wheel group are trusted
+    trusted-users = [ "@wheel" ];
+    # Remove all "dirty repository" warnings
+    warn-dirty = false;
+  };
 
   # NixOS version this flake was initially created on
   system.stateVersion = stateVersion;

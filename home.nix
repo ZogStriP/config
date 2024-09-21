@@ -51,6 +51,7 @@
     # Programs that don't need configuration
     home.packages = with pkgs; [
       curl # making requests
+      devenv # https://devenv.sh
       duf # better `df`
       dust # better `du`
       hexyl # better `xxd`
@@ -73,6 +74,13 @@
 
       # enable `bash`
       bash.enable = true;
+
+      # enable starship prompt
+      starship.enable = true;
+
+      # enable direnv
+      direnv.enable = true;
+      direnv.silent = true;
 
       # setup ssh to use 1password SSH agent
       ssh.enable = true;

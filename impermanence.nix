@@ -6,10 +6,10 @@
 
     # required system directories
     directories = [
-      "/var/lib/nixos"
-      "/var/lib/systemd"
       "/var/lib/fprint/${username}" # fingerprints
       "/var/lib/iwd" # WiFi connections
+      "/var/lib/nixos"
+      "/var/lib/systemd"
     ];
 
     # required system files
@@ -20,11 +20,13 @@
     users.${username} = {
       # required user directories
       directories = [
+        ".cache/Zeal" # Zeal's tmp files
+        ".cache/nix" # Nix's tmp files
         ".config/1Password"
-        ".local/share/atuin" # command lines database
-        ".local/share/zoxide" # command lines history
         ".local/share/Zeal" # where zeal stores docsets
-        ".cache/Zeal" # tmp files
+        ".local/share/atuin" # command lines database
+        ".local/share/direnv" # direnv.sh allowed directories
+        ".local/share/zoxide" # command lines history
         ".ssh"
       ];
     };
