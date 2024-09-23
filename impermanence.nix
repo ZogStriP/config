@@ -22,10 +22,12 @@
       directories = [
         ".cache/Zeal" # Zeal's tmp files
         ".cache/nix" # Nix's tmp files
+        ".cache/direnv"
         ".config/1Password"
-        ".local/share/Zeal" # where zeal stores docsets
+        ".local/share/Zeal" # Zeal's docsets
         ".local/share/atuin" # command lines database
         ".local/share/direnv" # direnv.sh allowed directories
+        ".local/share/devenv"
         ".local/share/zoxide" # command lines history
         ".ssh"
       ];
