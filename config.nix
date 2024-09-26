@@ -119,6 +119,12 @@
   services.greetd.settings.initial_session.user = username;
   services.greetd.settings.initial_session.command = "river > ~/.river.log 2>&1";
 
+  # tailscale
+  services.tailscale.enable = true;
+  services.tailscale.useRoutingFeatures = "both";
+  networking.nameservers = [ "100.100.100.100" "8.8.8.8" "1.1.1.1" ];
+  networking.search = [ "bicorn-duckbill.ts.net" ];
+
   # Remove nano
   programs.nano.enable = false;
 

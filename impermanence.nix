@@ -11,6 +11,7 @@
       "/var/lib/iwd" # WiFi connections
       "/var/lib/nixos"
       "/var/lib/systemd"
+      "/var/lib/tailscale" # tailscale
     ];
 
     # required system files
