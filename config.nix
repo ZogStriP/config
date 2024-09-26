@@ -11,6 +11,12 @@
   # Allow brightness control via `xbacklight` for users in `video` group
   hardware.acpilight.enable = true;
 
+  # Enable bluetooth
+  hardware.bluetooth.enable = true;
+
+  # Enable `bredr` to pair with AirPods (only required to do the initial pairing)
+  # hardware.bluetooth.settings.General.ControllerMode = "bredr";
+
   boot = {
     # Use latest kernel
     kernelPackages = pkgs.linuxPackages_latest;
