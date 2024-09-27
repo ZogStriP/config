@@ -191,6 +191,7 @@
           "app.normandy.api_url" = "";
           "app.normandy.enabled" = false;
           "app.shield.optoutstudies.enabled" = true;
+          "apz.gtk.kinetic_scroll.enabled" = false;
           "browser.aboutConfig.showWarning" = false;
           "browser.discovery.enabled" = false;
           "browser.newtabpage.activity-stream.discoverystream.enabled" = false;
