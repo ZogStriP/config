@@ -125,6 +125,8 @@
         colors.background = "000000";
         # bigger font
         main.dpi-aware = true;
+        # hide mouth when typing
+        mouse.hide-when-typing = true;
       };
 
       # system informations (better `neofetch`)
