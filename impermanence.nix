@@ -23,14 +23,15 @@
       # required user directories
       directories = [
         ".cache/Zeal" # Zeal's tmp files
-        ".cache/nix" # Nix's tmp files
         ".cache/direnv"
+        ".cache/nix" # Nix's tmp files
         ".config/1Password"
         ".local/share/Zeal" # Zeal's docsets
         ".local/share/atuin" # command lines database
-        ".local/share/direnv" # direnv.sh allowed directories
         ".local/share/devenv"
+        ".local/share/direnv" # direnv.sh allowed directories
         ".local/share/zoxide" # command lines history
+        ".mozilla" # firefox
         ".ssh"
       ];
     };
