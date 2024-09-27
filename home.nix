@@ -171,8 +171,18 @@
       firefox.enable = true;
       firefox.policies = {
         DisableAccounts = true;
-        # TODO: Extensions
-        # TODO: ExtensionSettings
+        ExtensionSettings = {
+          # 1Password:
+          "{d634138d-c276-4fc8-924b-40a0ea21d284}" = {
+            install_url = "https://addons.mozilla.org/firefox/downloads/latest/1password-x-password-manager/latest.xpi";
+            installation_mode = "force_installed";
+          };
+          # uBlock Origin:
+          "uBlock0@raymondhill.net" = {
+            install_url = "https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi";
+            installation_mode = "force_installed";
+          };
+        };
       };
       firefox.profiles.${username} = {
         id = 0;
