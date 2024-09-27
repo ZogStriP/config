@@ -123,6 +123,8 @@
       foot.settings = {
         # black background
         colors.background = "000000";
+        # bigger font
+        main.dpi-aware = true;
       };
 
       # system informations (better `neofetch`)
