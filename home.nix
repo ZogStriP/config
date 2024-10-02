@@ -55,6 +55,7 @@
       duf # better `df`
       dust # better `du`
       hexyl # better `xxd`
+      jless # JSON pager
       ncdu # interactive `du`
       zeal # offline doc
     ];
