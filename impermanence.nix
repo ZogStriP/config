@@ -6,7 +6,6 @@
 
     # required system directories
     directories = [
-      "/var/lib/NetworkManager" # WiFi leases
       "/var/lib/bluetooth" # bluetooth pairings
       "/var/lib/fprint/${username}" # fingerprints
       "/var/lib/iwd" # WiFi connections
