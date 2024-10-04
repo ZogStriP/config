@@ -21,6 +21,14 @@
     # Use latest kernel
     kernelPackages = pkgs.linuxPackages_latest;
 
+    # More power savings
+    # https://community.frame.work/t/tracking-linux-battery-life-tuning/6665/594
+    # https://discourse.ubuntu.com/t/fine-tuning-the-ubuntu-24-04-kernel-for-low-latency-throughput-and-power-efficiency/44834
+    kernelParams = [
+      "rcu_nocbs=all"
+      "rcutree.enable_rcu_lazy=1"
+    ];
+
     # Disable loading these modules during boot (so they don't trigger errors)
     blacklistedKernelModules = [ 
       "cros_ec_lpcs" # TODO: figure out what they do
