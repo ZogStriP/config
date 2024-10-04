@@ -125,7 +125,7 @@
         # black background
         colors.background = "000000";
         # bigger font
-        main.dpi-aware = true;
+        main.font = "monospace:size=12";
         # hide mouth when typing
         mouse.hide-when-typing = true;
       };
