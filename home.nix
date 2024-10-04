@@ -83,8 +83,11 @@
       direnv.enable = true;
       direnv.silent = true;
 
-      # setup ssh to use 1password SSH agent
+      # ssh
       ssh.enable = true;
+      # use compression
+      ssh.compression = true;
+      # use 1password SSH agent
       ssh.matchBlocks."*".extraOptions.IdentityAgent = "~/.1password/agent.sock";
 
       # source control
