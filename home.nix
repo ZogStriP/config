@@ -46,6 +46,7 @@
     home.shellAliases = {
       ".." = "cd ..";
       "..." = "cd ../..";
+      "ff" = "fastfetch";
     };
 
     # Programs that don't need configuration
