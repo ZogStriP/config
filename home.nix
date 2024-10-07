@@ -326,6 +326,8 @@
           "Super Z" = "spawn zeal";
           # close focused view
           "Super Q" = "close";
+          # disable Ctrl+Q shortcut
+          "Control Q" = "none";
           # exit `river`
           "Super+Shift E" = "exit";
           ###
