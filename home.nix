@@ -58,6 +58,7 @@
       hexyl # better `xxd`
       jless # JSON pager
       ncdu # interactive `du`
+      wget # downloading stuff
       zeal # offline doc
     ];
 
