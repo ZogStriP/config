@@ -237,6 +237,16 @@
 
       # better shell history
       atuin.enable = true;
+      atuin.settings = {
+        # use compact mode
+        style = "compact";
+        # disable live timestamp updates
+        prefers_reduced_motion = true;
+        # no need for help
+        show_help = false;
+        # disable update checks
+        update_check = false;
+      };
 
       # better `ls`
       eza.enable = true;
