@@ -246,6 +246,8 @@
         show_help = false;
         # disable update checks
         update_check = false;
+        # Enter will execute the line
+        enter_accept = true;
       };
 
       # better `ls`
