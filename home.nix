@@ -77,6 +77,16 @@
 
       # enable `bash`
       bash.enable = true;
+      # run command when initializing an interactive shell
+      bash.initExtra = ''
+        # cd into last directory if the file exists
+        if [[ -f ~/.last ]]; then
+          cd "$(cat ~/.last)"
+        fi
+
+        # save the current directory before each prompt
+        PROMPT_COMMAND='echo "$PWD" > ~/.last; '"$PROMPT_COMMAND"
+      '';
 
       # enable starship prompt
       starship.enable = true;
