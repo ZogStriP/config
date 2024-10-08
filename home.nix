@@ -370,8 +370,8 @@
           "Super J" = "focus-view down";
           "Super K" = "focus-view up";
           "Super L" = "focus-view right";
-          "Super P" = "focus-view previous";
-          "Super N" = "focus-view next";
+          "Super BracketLeft" = "focus-view previous";
+          "Super BracketRight" = "focus-view next";
           # Toggle float (on focused view)
           "Super+Shift F" = "toggle-float";
           # swap focus
@@ -379,8 +379,8 @@
           "Super+Shift J" = "swap down";
           "Super+Shift K" = "swap up";
           "Super+Shift L" = "swap right";
-          "Super+Shift P" = "swap previous";
-          "Super+Shift N" = "swap next";
+          "Super+Shift BracketLeft" = "swap previous";
+          "Super+Shift BracketRight" = "swap next";
           # move floating views
           "Super+Alt H" = "move left 50";
           "Super+Alt J" = "move down 50";
