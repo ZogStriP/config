@@ -180,6 +180,8 @@
           ignorecase = true;
           # case sensitive search only when there's an uppercase character
           smartcase = true;
+          # disable wrapping by default
+          wrap = false;
         };
       };
 
