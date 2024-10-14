@@ -88,9 +88,6 @@
   # Only members of `wheel` group can execute `sudo`
   security.sudo.execWheelOnly = true;
 
-  # Enable PolKit (required for wayland / river)
-  security.polkit.enable = true;
-
   # Enable RealtimeKit (required for pipewire / pulse)
   security.rtkit.enable = true;
 
