@@ -91,6 +91,9 @@
       # enable starship prompt
       starship.enable = true;
 
+      # enable carapace, a command / argument completer
+      carapace.enable = true;
+
       # enable direnv
       direnv.enable = true;
       direnv.silent = true;
