@@ -313,6 +313,8 @@
         background-color = "0x000000";
         # use `rivertile` for layout
         default-layout = "rivertile";
+        # define Right-Alt to be Compose key
+        keyboard-layout."-variant".altgr-intl."-options"."compose:rwin" = "us";
         # enable natural scrolling on touchpad
         input."*_Touchpad".natural-scroll = true;
         # remove borders
