@@ -55,7 +55,6 @@
       devenv # https://devenv.sh
       duf # better `df`
       dust # better `du`
-      hexyl # better `xxd`
       jless # JSON pager
       ncdu # interactive `du`
       wget # downloading stuff
@@ -90,9 +89,6 @@
 
       # enable starship prompt
       starship.enable = true;
-
-      # enable carapace, a command / argument completer
-      carapace.enable = true;
 
       # enable direnv
       direnv.enable = true;
