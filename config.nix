@@ -120,12 +120,6 @@
       KEYBOARD_KEY_3a=esc
   '';
 
-  # Use greetd login manager to autologin into `river`
-  services.greetd.enable = true;
-  services.greetd.settings.default_session.command = "${pkgs.greetd.greetd}/bin/agreety --cmd ${pkgs.bashInteractive}/bin/bash";
-  services.greetd.settings.initial_session.user = username;
-  services.greetd.settings.initial_session.command = "river > ~/.river.log 2>&1";
-
   # tailscale
   services.tailscale.enable = true;
   services.tailscale.useRoutingFeatures = "both";
