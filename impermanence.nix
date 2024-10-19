@@ -27,7 +27,6 @@
         ".cache/nix" # Nix's tmp files
         ".config/1Password"
         ".local/share/Zeal" # Zeal's docsets
-        ".local/share/atuin" # command lines database
         ".local/share/devenv"
         ".local/share/direnv" # direnv.sh allowed directories
         ".local/share/fish" # fish
