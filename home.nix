@@ -58,6 +58,7 @@
       jless # JSON pager
       ncdu # interactive `du`
       wget # downloading stuff
+      wl-clipboard # wl-copy / wl-paste
       zeal # offline doc
     ];
 
@@ -181,6 +182,8 @@
           smartcase = true;
           # disable wrapping by default
           wrap = false;
+          # merge both * and + registers to allow system-wide copy/paste
+          clipboard = "unnamedplus";
         };
       };
 
