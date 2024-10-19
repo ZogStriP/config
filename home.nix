@@ -140,7 +140,7 @@
         colors.background = "000000";
         # bigger font
         main.font = "monospace:size=12";
-        # hide mouth when typing
+        # hide mouse when typing
         mouse.hide-when-typing = true;
         # lots of scrollback (default is 1k)
         scrollback.lines = 65536;
