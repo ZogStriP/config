@@ -187,9 +187,6 @@
         };
       };
 
-      # fuzzy finder
-      fzf.enable = true;
-
       # json tooling
       jq.enable = true;
 
