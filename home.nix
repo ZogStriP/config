@@ -97,6 +97,12 @@
         end
       '';
 
+      # configure fish
+      fish.interactiveShellInit = ''
+        # disable greeting
+        set fish_greeting
+      '';
+
       # enable starship prompt
       starship.enable = true;
 
