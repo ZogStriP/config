@@ -159,6 +159,8 @@
     trusted-users = [ "@wheel" ];
     # Remove all "dirty repository" warnings
     warn-dirty = false;
+    # Always show the trace message when there's an error
+    show-trace = true;
   };
 
   # NixOS version this flake was initially created on
