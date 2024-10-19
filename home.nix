@@ -26,6 +26,18 @@
     ];
   };
 
+  # Automatically logs in
+  services.getty.autologinUser = username;
+
+  # Uses `fish` shell on interactive shells
+  environment.interactiveShellInit = ''
+    if [[ $(${pkgs.procps}/bin/ps --no-header --pid=$PPID --format=comm) != "fish" && -z ''${BASH_EXECUTION_STRING} ]]
+    then
+      shopt -q login_shell && LOGIN_OPTION='--login' || LOGIN_OPTION=""
+      exec ${pkgs.fish}/bin/fish $LOGIN_OPTION
+    fi
+  '';
+
   # Install 1password CLI & GUI from NixOS instead of Home-Manager
   # NOTE: otherwise `op` wasn't connecting with 1password
   programs._1password.enable = true;
@@ -75,17 +87,14 @@
       # Let home manager manage itself
       home-manager.enable = true;
 
-      # enable `bash`
-      bash.enable = true;
-      # run command when initializing an interactive shell
-      bash.initExtra = ''
-        # cd into last directory if the file exists
-        if [[ -f ~/.last ]]; then
-          cd "$(cat ~/.last)"
-        fi
+      # enable fish
+      fish.enable = true;
 
-        # save the current directory before each prompt
-        PROMPT_COMMAND='echo "$PWD" > ~/.last; '"$PROMPT_COMMAND"
+      # automatically launch `river` on tty1
+      fish.loginShellInit = ''
+        if test -z "$WAYLAND_DISPLAY" -a (tty) = "/dev/tty1"
+          exec river > ~/.river.log 2>&1
+        end
       '';
 
       # enable starship prompt
