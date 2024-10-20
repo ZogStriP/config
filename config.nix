@@ -126,27 +126,10 @@
   networking.nameservers = [ "100.100.100.100" "8.8.8.8" "1.1.1.1" ];
   networking.search = [ "bicorn-duckbill.ts.net" ];
 
-  # autologin
-  security.pam.services.autologin.startSession = true;
-
-  # This prevents nixos-rebuild from killing autologin by activating getty again
-  systemd.services."autovt@tty1".enable = false;
-
-  systemd.services.autologin = {
-    aliases = [ "display-manager.service" ];
-
-    after = [ "systemd-user-sessions.service" ];
-    wants = [ "getty@tty1.service" ];
-    wantedBy = [ "multi-user.target" ];
-    conflicts = [ "getty@tty1.service" ];
-
-    serviceConfig = {
-      ExecStart = "${pkgs.autologin}/bin/autologin ${username} ${pkgs.river}/bin/river";
-    };
-
-    # Don't kill a user session when using nixos-rebuild
-    restartIfChanged = false;
-  };
+  # use `agetty` to autologin
+  services.getty.autologinUser = username;
+  # hide login prompt and welcome message (issue)
+  services.getty.extraArgs = [ "--skip-login" "--noissue" "--nonewline" ];
 
   # Remove nano
   programs.nano.enable = false;

@@ -51,7 +51,6 @@
 
     # Programs that don't need configuration
     home.packages = with pkgs; [
-      autologin # https://git.sr.ht/~kennylevinsen/autologin/
       curl # making requests
       devenv # https://devenv.sh
       duf # better `df`
@@ -78,6 +77,10 @@
 
       # enable bash (for TTYs)
       bash.enable = true;
+
+      bash.profileExtra = ''
+        [[ -z "$DISPLAY" && $(tty) = "/dev/tty1" ]] && exec ${pkgs.river}/bin/river > ~/.river.log 2>&1
+      '';
 
       # enable fish
       fish.enable = true;
