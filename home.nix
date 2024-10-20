@@ -15,28 +15,16 @@
     isNormalUser = true;
     # `mkpasswd -m yescrypt > /persist/passwd` to generate hash
     hashedPassword = "";
-    # hashedPasswordFile = "/persist/passwd";
+    # TODO: hashedPasswordFile = "/persist/passwd";
     # Set the `zogstrip` group
     group = username;
-    # Can `sudo`
+    # Other groups
     extraGroups = [ 
       "networkmanager" # wifi
       "video" # brightness
       "wheel" # sudo 
     ];
   };
-
-  # Automatically logs in
-  services.getty.autologinUser = username;
-
-  # Uses `fish` shell on interactive shells
-  environment.interactiveShellInit = ''
-    if [[ $(${pkgs.procps}/bin/ps --no-header --pid=$PPID --format=comm) != "fish" && -z ''${BASH_EXECUTION_STRING} ]]
-    then
-      shopt -q login_shell && LOGIN_OPTION='--login' || LOGIN_OPTION=""
-      exec ${pkgs.fish}/bin/fish $LOGIN_OPTION
-    fi
-  '';
 
   # Install 1password CLI & GUI from NixOS instead of Home-Manager
   # NOTE: otherwise `op` wasn't connecting with 1password
@@ -63,6 +51,7 @@
 
     # Programs that don't need configuration
     home.packages = with pkgs; [
+      autologin # https://git.sr.ht/~kennylevinsen/autologin/
       curl # making requests
       devenv # https://devenv.sh
       duf # better `df`
@@ -87,20 +76,26 @@
       # Let home manager manage itself
       home-manager.enable = true;
 
+      # enable bash (for TTYs)
+      bash.enable = true;
+
       # enable fish
       fish.enable = true;
-
-      # automatically launch `river` on tty1
-      fish.loginShellInit = ''
-        if test -z "$WAYLAND_DISPLAY" -a (tty) = "/dev/tty1"
-          exec river > ~/.river.log 2>&1
-        end
-      '';
 
       # configure fish
       fish.interactiveShellInit = ''
         # disable greeting
         set fish_greeting
+
+        # save last dir
+        function save_last_dir --on-event fish_prompt
+          echo $PWD > ~/.last
+        end
+
+        # automatically cd into last dir
+        if test -f ~/.last
+          cd (cat ~/.last)
+        end
       '';
 
       # enable starship prompt
@@ -156,6 +151,8 @@
         colors.background = "000000";
         # bigger font
         main.font = "monospace:size=12";
+        # default shell
+        main.shell = "fish";
         # hide mouse when typing
         mouse.hide-when-typing = true;
         # lots of scrollback (default is 1k)
