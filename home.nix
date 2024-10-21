@@ -78,11 +78,12 @@
       # enable bash (for TTYs)
       bash.enable = true;
 
+      # automatically launch `river` on tty1
       bash.profileExtra = ''
         [[ -z "$DISPLAY" && $(tty) = "/dev/tty1" ]] && exec ${pkgs.river}/bin/river > ~/.river.log 2>&1
       '';
 
-      # enable fish
+      # enable fish (used in `foot`)
       fish.enable = true;
 
       # configure fish
@@ -144,7 +145,6 @@
           };
         };
       };
-
 
       # (wayland) terminal emulator
       # https://codeberg.org/dnkl/foot
