@@ -100,10 +100,10 @@
           echo $PWD > ~/.last
         end
 
-         # cd into last dir
-         if test -f ~/.last
-           cd (cat ~/.last)
-         end
+        # cd into last dir
+        if test -f ~/.last
+          cd (cat ~/.last)
+        end
       '';
 
       # enable starship prompt
