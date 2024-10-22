@@ -91,15 +91,19 @@
         # disable greeting
         set fish_greeting
 
-        # save last dir
-        function save_last_dir --on-event fish_prompt
+        # run on each prompt
+        function on_prompt --on-event fish_prompt
+          # marker to allow jumping between prompt (ctrl+shift+y / ctrl+shift+x)
+          echo -en "\e]133;A\e\\"
+
+          # save last dir
           echo $PWD > ~/.last
         end
 
-        # automatically cd into last dir
-        if test -f ~/.last
-          cd (cat ~/.last)
-        end
+         # cd into last dir
+         if test -f ~/.last
+           cd (cat ~/.last)
+         end
       '';
 
       # enable starship prompt
