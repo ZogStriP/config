@@ -107,6 +107,7 @@
 
       # enable direnv
       direnv.enable = true;
+      # silence direnv
       direnv.silent = true;
 
       # ssh
