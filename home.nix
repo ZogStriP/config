@@ -351,7 +351,9 @@
           # open firefox
           "Super F" = "spawn firefox";
           # open 1Password's quick access
-          "Super O" = "spawn '1password --quick-access'";
+          "Super P" = "spawn '1password --quick-access'";
+          # open 1Password
+          "Super+Shift P" = "spawn '1password --toggle'";
           # open zeal
           "Super Z" = "spawn zeal";
           # close focused view
