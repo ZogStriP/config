@@ -32,8 +32,6 @@
     # Disable loading these modules during boot (so they don't trigger errors)
     blacklistedKernelModules = [ 
       "cros-usbpd-charger" # not used by frame.work EC and causes boot time error log
-      "cros_ec_gpio" # TODO: figure out what they do
-      "cros_ec_lpcs" # TODO: figure out what they do
       "hid-sensor-hub" # prevent interferences with fn/media keys - https://community.frame.work/t/20675/391
       "iTCO_wdt" # disable "Intel TCO Watchdog Timer"
       "mei_wdt" # disable "Intel Management Engine Interface Watchdog Timer"
