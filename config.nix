@@ -112,10 +112,15 @@
   # Disable power button
   services.logind.powerKey = "ignore";
 
-  # Remap CAPS lock to ESC
+  # Extra hwdb udev rules
   services.udev.extraHwdb = ''
+    # Remap CAPS lock to ESC
     evdev:atkbd:*
       KEYBOARD_KEY_3a=esc
+
+    # Disable RFKILL key (airplane mode)
+    evdev:input:b0018v32ACp0006*
+      KEYBOARD_KEY_100c6=reserved
   '';
 
   # tailscale
