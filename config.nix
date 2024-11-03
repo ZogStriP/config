@@ -71,7 +71,7 @@
   networking.networkmanager.wifi.backend = "iwd";
 
   # Disable wait-online target for faster boot
-  systemd.network.wait-online.enable = false;
+  systemd.network.wait-online.enable = lib.mkForce false;
 
   # Machine's timezone
   time.timeZone = "Europe/Paris";
