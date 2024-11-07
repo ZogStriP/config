@@ -73,6 +73,9 @@
   # Disable wait-online target for faster boot
   systemd.network.wait-online.enable = lib.mkForce false;
 
+  # Reduce services kill timeout from 1m30s down to 15s
+  systemd.extraConfig = "DefaultTimeoutStopSec=15s";
+
   # Machine's timezone
   time.timeZone = "Europe/Paris";
 
