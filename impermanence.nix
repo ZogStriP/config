@@ -22,17 +22,11 @@
     users.${username} = {
       # required user directories
       directories = [
-        ".cache/Zeal" # Zeal's tmp files
-        ".cache/direnv"
-        ".cache/nix" # Nix's tmp files
+        ".cache"
         ".cargo"
         ".config/1Password"
-        ".local/share/Zeal" # Zeal's docsets
-        ".local/share/devenv"
-        ".local/share/direnv" # direnv.sh allowed directories
-        ".local/share/fish" # fish
-        ".local/share/zoxide" # command lines history
-        ".mozilla" # firefox
+        ".local/share"
+        ".mozilla"
         ".ssh"
       ];
     };
