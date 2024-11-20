@@ -32,6 +32,10 @@
   programs._1password-gui.enable = true;
   programs._1password-gui.polkitPolicyOwners = [ username ];
 
+  # Install nh (not available in Home-Manager)
+  programs.nh.enable = true;
+  programs.nh.flake = "/persist/z/poetry/config";
+
   # zogstrip's home configuration
   home-manager.users.${username} = {
     imports = [ nixvim.homeManagerModules.nixvim ];
