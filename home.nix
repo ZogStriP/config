@@ -1,4 +1,4 @@
-{ home-manager, nixvim, pkgs, lib, username, stateVersion, ... } : {
+{ home-manager, nixvim, nix-index-database, pkgs, lib, username, stateVersion, ... } : {
   imports = [ home-manager.nixosModules.home-manager ];
 
   # Use NixOS nixpkgs & configurations
@@ -38,7 +38,10 @@
 
   # zogstrip's home configuration
   home-manager.users.${username} = {
-    imports = [ nixvim.homeManagerModules.nixvim ];
+    imports = [ 
+      nixvim.homeManagerModules.nixvim
+      nix-index-database.hmModules.nix-index
+    ];
 
     home.username = username;
     home.homeDirectory = "/home/${username}";
