@@ -33,7 +33,6 @@
         ./impermanence.nix
         ./home.nix
         ./config.nix
-        ./luciole.nix
       ];
     };
   };

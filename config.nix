@@ -1,4 +1,6 @@
 { pkgs, lib, hostname, username, stateVersion, ... } : {
+  imports = [ ./luciole.nix ];
+
   # Various open source drivers
   hardware.enableRedistributableFirmware = true;
   
