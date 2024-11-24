@@ -16,6 +16,9 @@
     nixvim.url = "github:nix-community/nixvim";
     nixvim.inputs.nixpkgs.follows = "nixpkgs";
     nixvim.inputs.home-manager.follows = "home-manager";
+
+    dactylogramme.url = "github:zogstrip/dactylogramme";
+    dactylogramme.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = { nixpkgs, ... } @ inputs : {
@@ -29,10 +32,10 @@
       };
 
       modules = [
-        ./disko.nix
-        ./impermanence.nix
-        ./home.nix
         ./config.nix
+        ./disko.nix
+        ./home.nix
+        ./impermanence.nix
       ];
     };
   };

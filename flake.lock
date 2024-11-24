@@ -1,5 +1,25 @@
 {
   "nodes": {
+    "dactylogramme": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1732458691,
+        "narHash": "sha256-hXwjFCEVwcrdYjHn8XwsXFJHxz2l6xIVybCQTRyUgAw=",
+        "owner": "zogstrip",
+        "repo": "dactylogramme",
+        "rev": "f64def6934a758b6b5f630d209d4a7a527beefdd",
+        "type": "github"
+      },
+      "original": {
+        "owner": "zogstrip",
+        "repo": "dactylogramme",
+        "type": "github"
+      }
+    },
     "devshell": {
       "inputs": {
         "nixpkgs": [
@@ -321,6 +341,7 @@
     },
     "root": {
       "inputs": {
+        "dactylogramme": "dactylogramme",
         "disko": "disko",
         "home-manager": "home-manager",
         "impermanence": "impermanence",

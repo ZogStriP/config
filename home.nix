@@ -1,4 +1,4 @@
-{ home-manager, nixvim, nix-index-database, pkgs, lib, username, stateVersion, ... } : {
+{ home-manager, nixvim, nix-index-database, dactylogramme, pkgs, lib, username, stateVersion, ... } : {
   imports = [ home-manager.nixosModules.home-manager ];
 
   # Use NixOS nixpkgs & configurations
@@ -26,15 +26,21 @@
     ];
   };
 
-  # Install 1password CLI & GUI from NixOS instead of Home-Manager
-  # NOTE: otherwise `op` wasn't connecting with 1password
+  # Programs installed from NixOS rather than Home Manager
+
+  # 1Password GUI & CLI
   programs._1password.enable = true;
   programs._1password-gui.enable = true;
   programs._1password-gui.polkitPolicyOwners = [ username ];
 
-  # Install nh (not available in Home-Manager)
+  # nh os switch (has much better output)
   programs.nh.enable = true;
   programs.nh.flake = "/persist/z/poetry/config";
+
+  # dactylogramme
+  environment.systemPackages = [
+    dactylogramme.packages.${pkgs.system}.default
+  ];
 
   # zogstrip's home configuration
   home-manager.users.${username} = {
@@ -445,6 +451,8 @@
           "foot"
           # 1password (background)
           "'1password --silent'"
+          # polkit authentication agent
+          "dactylogramme"
         ];
       };
     };
