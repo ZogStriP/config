@@ -7,7 +7,7 @@
       ExecStart = pkgs.writeShellScript "luciole" ''
         declare -A COLORS=(
           [default]="0 0 0 0 1 0" # white
-          [scan]="0 0 0 1 0 0"    # amber
+          [scan]="0 0 0 0 0 1"    # amber
           [success]="0 1 0 0 0 0" # green
           [fail]="1 0 0 0 0 0"    # red
         )
