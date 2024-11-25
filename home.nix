@@ -280,6 +280,8 @@
 
       # better `ls`
       eza.enable = true;
+      # display icons
+      eza.icons = "auto";
 
       # better `cd`
       zoxide.enable = true;
