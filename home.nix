@@ -155,8 +155,8 @@
           gpg.format = "ssh";
           gpg.ssh.program = lib.getExe' pkgs._1password-gui "op-ssh-sign";
           push.autoSetupRemote = true;
-          # always push using SSH - https://www.jvt.me/posts/2019/03/20/git-rewrite-url-https-ssh/
-          url."ssh://git@github.com/".pushInsteadOf = "https://github.com/";
+          # always use SSH - https://www.jvt.me/posts/2019/03/20/git-rewrite-url-https-ssh/
+          url."ssh://git@github.com/".InsteadOf = "https://github.com/";
           user = {
             name = username;
             email = "regis@hanol.fr";
