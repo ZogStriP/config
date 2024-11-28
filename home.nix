@@ -331,6 +331,8 @@
         default-layout = "rivertile";
         # define Right-Alt to be Compose key
         keyboard-layout."-variant".altgr-intl."-options"."compose:rwin" = "us";
+        # faster keyboard repeat <rate> (25/s) <delay> (600ms)
+        set-repeat = "20 150";
         # enable natural scrolling on touchpad
         input."*_Touchpad".natural-scroll = true;
         # remove borders
