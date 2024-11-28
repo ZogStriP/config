@@ -151,12 +151,14 @@
         # global git config
         extraConfig = {
           init.defaultBranch = "main";
-          commit.gpgsign = true;
-          gpg.format = "ssh";
-          gpg.ssh.program = lib.getExe' pkgs._1password-gui "op-ssh-sign";
           push.autoSetupRemote = true;
           # always use SSH - https://www.jvt.me/posts/2019/03/20/git-rewrite-url-https-ssh/
           url."ssh://git@github.com/".InsteadOf = "https://github.com/";
+          # commit signing
+          commit.gpgsign = true;
+          gpg.format = "ssh";
+          gpg.ssh.program = lib.getExe' pkgs._1password-gui "op-ssh-sign";
+          # user settings
           user = {
             name = username;
             email = "regis@hanol.fr";
