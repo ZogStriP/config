@@ -1,4 +1,4 @@
-{ home-manager, nixvim, nix-index-database, dactylogramme, pkgs, lib, username, stateVersion, ... } : {
+{ home-manager, nixvim, dactylogramme, pkgs, lib, username, stateVersion, ... } : {
   imports = [ home-manager.nixosModules.home-manager ];
 
   # Use NixOS nixpkgs & configurations
@@ -37,6 +37,9 @@
   programs.nh.enable = true;
   programs.nh.flake = "/persist/z/poetry/config";
 
+  # disable command-not-found
+  programs.command-not-found.enable = false;
+
   # dactylogramme
   environment.systemPackages = [
     dactylogramme.packages.${pkgs.system}.default
@@ -44,10 +47,7 @@
 
   # zogstrip's home configuration
   home-manager.users.${username} = {
-    imports = [ 
-      nixvim.homeManagerModules.nixvim
-      nix-index-database.hmModules.nix-index
-    ];
+    imports = [ nixvim.homeManagerModules.nixvim ];
 
     home.username = username;
     home.homeDirectory = "/home/${username}";
