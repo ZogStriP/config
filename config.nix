@@ -147,7 +147,7 @@
   fonts.enableDefaultPackages = true;
 
   fonts.packages = with pkgs; [
-    (nerdfonts.override { fonts = [ "FiraCode" ]; })
+    nerd-fonts.fira-code
   ];
 
   # Allow 1password "unfree" packages
