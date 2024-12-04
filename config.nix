@@ -310,6 +310,9 @@ in {
 
         # Some files
         file = {
+          # disable "Last login" message in Terminal.app
+          ".hushlogin".text = "";
+
           # Discourse SSH config
           ".discourse/ssh_config.yml".text = ''
             username: ${username}
