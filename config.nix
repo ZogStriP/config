@@ -14,6 +14,7 @@ in {
   # TODO: find a way to make app installed by home-manager appear in the dock & spotlight
   # TODO: find a way to import the `discourse-org/ops` repository from the flake (and run `write-ssh-config` ??)
   # TODO: is it better to define the `SSH_AUTH_SOCK` env variable instead of using "IdentityAgent" in the SSH config?
+  # TODO: investigate why `LSQuarantine` isn't working
 
   # Prevent power button from putting the computer to sleep
   power.sleep.allowSleepByPowerButton = false;
@@ -160,7 +161,6 @@ in {
     WindowManager.EnableStandardClickToShowDesktop = false;
 
     # Disable "Are you sure you want to open this application?" dialog
-    # TODO: investigate why it's not working
     LaunchServices.LSQuarantine = false;
 
     # Global system settings
