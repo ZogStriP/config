@@ -224,8 +224,8 @@ in {
 
     excluded=(
       "/Library"
-      "/Users/${username}/Library"
-      "/Users/${username}/Poetry"
+      "${home}/Library"
+      "${home}/Poetry"
       "''${node_modules[@]}"
     )
 
