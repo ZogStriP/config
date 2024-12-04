@@ -220,7 +220,7 @@ in {
     echo 2>&1 "excluding directories from spotlight..."
 
     # Find all `node_modules` directories in Dropbox
-    readarray -t node_modules < <(find "/Users/${username}/Dropbox" -type d -name "node_modules" -prune)
+    readarray -t node_modules < <(find "${home}/Dropbox" -type d -name "node_modules" -prune)
 
     excluded=(
       "/Library"
