@@ -139,6 +139,9 @@
   # hide login prompt and welcome message (issue)
   services.getty.extraArgs = [ "--skip-login" "--noissue" "--nonewline" ];
 
+  # firmware updates manager
+  services.fwupd.enable = true;
+
   # Remove nano
   programs.nano.enable = false;
 
