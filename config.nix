@@ -15,6 +15,7 @@ in {
   # TODO: find a way to import the `discourse-org/ops` repository from the flake (and run `write-ssh-config` ??)
   # TODO: is it better to define the `SSH_AUTH_SOCK` env variable instead of using "IdentityAgent" in the SSH config?
   # TODO: investigate why `LSQuarantine` isn't working
+  # TODO: figure out why it's asking for sudo password twice when running `darwin-rebuild switch`
 
   # Prevent power button from putting the computer to sleep
   power.sleep.allowSleepByPowerButton = false;
@@ -441,9 +442,8 @@ in {
         neovim.viAlias = true;
         neovim.vimAlias = true;
 
-        # TODO: enable once it's out of beta - https://github.com/viperML/nh/issues/182
         # nix CLI helper (`nh darwing switch`)
-        # nh.enable = true;
+        nh.enable = true;
 
         # better `grep` (rg)
         ripgrep.enable = true;
