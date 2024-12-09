@@ -71,6 +71,13 @@ in {
         DSDontWriteNetworkStores = true;
         DSDontWriteUSBStores = true;
       };
+      # Finder settings
+      "com.apple.Finder" = {
+        # Don't warn when emptying the trash
+        WarnOnEmptyTrash = false;
+        # Empty Trash securely
+        EmptyTrashSecurely = true;
+      };
       # Safari settings
       # NOTE: this requires the program you run the `darwin-rebuild switch` command in
       # to have the necessary permissions in System Preferences -> Privacy -> Full Disk Access
@@ -91,6 +98,8 @@ in {
         IncludeDevelopMenu = true;
         # Enable Web Inspector
         WebKitDeveloperExtrasEnabledPreferenceKey = true;
+        # Enable narrow tabs
+        EnableNarrowTabs = true;
       };
       # Spotlight settings
       "com.apple.Spotlight" = {
@@ -451,8 +460,7 @@ in {
 
         # zed
         zed-editor.enable = true;
-        zed-editor.extensions = [ "csv" "html" "nix" "php" "ruby" "sql" ];
-        zed-editor.extraPackages = with pkgs; [ nixd nil ];
+        zed-editor.extensions = [ "csv" "html" "nix" "ruby" "sql" ];
         zed-editor.userSettings = {
           buffer_font_size = 14;
           tab_size = 2;
