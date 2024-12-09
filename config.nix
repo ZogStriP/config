@@ -365,6 +365,15 @@ in {
 
         # Manage zsh configuration
         zsh.enable = true;
+        zsh.initExtra = ''
+          # Display a warning if the terminal program needs Full Disk Access
+          if [[ -n "$TERM_PROGRAM" ]] && [[ -o interactive ]] && ! [[ -r ~/Library/Application\ Support/com.apple.TCC/TCC.db ]]; then
+            echo
+            print -P "%F{red}%B$TERM_PROGRAM%b needs Full Disk Access for best terminal experience%f"
+            print -P "👉 %F{blue}System Settings → Privacy & Security → Full Disk Access%f"
+            echo
+          fi
+        '';
 
         # SSH configuration
         ssh.enable = true;
