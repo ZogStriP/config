@@ -146,7 +146,7 @@ in {
         "/Applications/Firefox.app"
         "/Applications/Visual Studio Code.app"
         "/Applications/Spotify.app"
-        "${home}/Applications/Home Manager Apps/Zed.app"
+        "/Applications/Zed.app"
         "/System/Applications/Utilities/Terminal.app"
       ];
       # No folders in dock
@@ -269,6 +269,7 @@ in {
       "spotify"
       "visual-studio-code"
       "vlc"
+      "zed"
     ];
   };
 
@@ -319,7 +320,6 @@ in {
           "${ops}/bin"        # `mothership` & `dssh`
         ];
 
-        # Some files
         file = {
           # disable "Last login" message in Terminal.app
           ".hushlogin".text = "";
@@ -334,11 +334,37 @@ in {
             [default]
             region=us-east-1
             mfa_serial=${aws-mfa-serial}
-            mfa_process=op --account discourse.1password.com item get aws --otp
+            mfa_process=op --account discourse item get aws --otp
             s3 =
               max_concurrent_requests = 100
 
             [profile discourse-sts]
+          '';
+
+          # zed's configuration
+          ".config/zed/settings.json".text = ''
+            {
+              "auto_install_extensions": {
+                "csv": true,
+                "html": true,
+                "nix": true,
+                "ruby": true,
+                "sql": true
+              },
+              "buffer_font_size": 14,
+              "tab_size": 2,
+              "terminal": {
+                "font_family": "FiraCode Nerd Font"
+              },
+              "theme": {
+                "dark": "One Dark",
+                "light": "One Light",
+                "mode": "system"
+              },
+              "ui_font_family": "FiraCode Nerd Font",
+              "ui_font_size": 14,
+              "vim_mode": true
+            }
           '';
         };
 
@@ -466,25 +492,6 @@ in {
 
         # better `grep` (rg)
         ripgrep.enable = true;
-
-        # zed
-        zed-editor.enable = true;
-        zed-editor.extensions = [ "csv" "html" "nix" "ruby" "sql" ];
-        zed-editor.userSettings = {
-          buffer_font_size = 14;
-          tab_size = 2;
-          terminal = {
-            font_family = "FiraCode Nerd Font";
-          };
-          theme = {
-            mode = "system";
-            light = "One Light";
-            dark = "One Dark";
-          };
-          ui_font_family = "FiraCode Nerd Font";
-          ui_font_size = 14;
-          vim_mode = true;
-        };
 
         # better `cd` (z)
         zoxide.enable = true;
