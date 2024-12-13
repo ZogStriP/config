@@ -410,6 +410,10 @@ in {
         direnv.enable = true;
         direnv.silent = true;
 
+        # better `find` (fd)
+        fd.enable = true;
+        fd.ignores = [ ".git" "node_modules" "target" "vendor" ];
+
         # Git configuration
         git.enable = true;
         # Use `difftastic` for better diffs
