@@ -8,6 +8,7 @@
 in {
   imports = [ hm.darwinModules.home-manager ];
 
+  # TODO: extract Terminal.app's configuration from `defaults read com.apple.Terminal` and apply it here
   # TODO: find a way to set the wallpaper to Black solid color
   # TODO: find a way to set the screen resolution
   # TODO: get rid of homebrew and install all the application via nixpkgs / home-manager / nix-darwin
