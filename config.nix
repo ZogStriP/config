@@ -251,6 +251,10 @@ in {
   homebrew = {
     # Enable homebrew
     enable = true;
+    # Automatically update homebrew
+    onActivation.autoUpdate = true;
+    # Automatically upgrade homebrew
+    onActivation.upgrade = true;
     # Automatically remove unmanaged formulae
     onActivation.cleanup = "zap";
 
