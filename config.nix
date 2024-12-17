@@ -9,9 +9,9 @@ in {
   imports = [ hm.darwinModules.home-manager ];
 
   # TODO: extract Terminal.app's configuration from `defaults read com.apple.Terminal` and apply it here
+  # TODO: find a way to install Kolide with nix ? https://github.com/kolide/nix-agent ?
   # TODO: find a way to set the wallpaper to Black solid color
   # TODO: find a way to set the screen resolution
-  # TODO: get rid of homebrew and install all the application via nixpkgs / home-manager / nix-darwin
   # TODO: find a way to make app installed by home-manager appear in the dock & spotlight
   # TODO: find a way to import the `discourse-org/ops` repository from the flake (and run `write-ssh-config` ??)
   #       => https://gist.github.com/arianvp/8f80c23a3410d27746fb97a6563d9677
@@ -223,28 +223,30 @@ in {
     };
   };
 
-  # Exclude directories from Spotlight search
   system.activationScripts.extraUserActivation.text = lib.mkAfter ''
-    if [[ ! -d "/System/Volumes/Data/.Spotlight-V100" ]]; then
-      exit 0
+    # Exclude directories from Spotlight
+    if [[ -d "/System/Volumes/Data/.Spotlight-V100" ]]; then
+      echo 2>&1 "excluding directories from 🔍 spotlight..."
+
+      # Find all `node_modules` directories in Dropbox
+      readarray -t node_modules < <(find "${home}/Dropbox" -type d -name "node_modules" -prune)
+
+      excluded=(
+        "/Library"
+        "${home}/Library"
+        "${home}/Poetry"
+        "''${node_modules[@]}"
+      )
+
+      sudo plutil \
+        -replace Exclusions \
+        -json "$(printf '%s\n' "''${excluded[@]}" | sort -u | jq -R . | jq -s .)" \
+        "/System/Volumes/Data/.Spotlight-V100/VolumeConfiguration.plist"
     fi
 
-    echo 2>&1 "excluding directories from spotlight..."
-
-    # Find all `node_modules` directories in Dropbox
-    readarray -t node_modules < <(find "${home}/Dropbox" -type d -name "node_modules" -prune)
-
-    excluded=(
-      "/Library"
-      "${home}/Library"
-      "${home}/Poetry"
-      "''${node_modules[@]}"
-    )
-
-    sudo plutil \
-      -replace Exclusions \
-      -json "$(printf '%s\n' "''${excluded[@]}" | sort -u | jq -R . | jq -s .)" \
-      "/System/Volumes/Data/.Spotlight-V100/VolumeConfiguration.plist"
+    # Activate firewall
+    echo 2>&1 "activating 🧱 firewall..."
+    sudo /usr/libexec/ApplicationFirewall/socketfilterfw --setglobalstate on --setstealthmode on
   '';
 
   # Homebrew package manager configuration
