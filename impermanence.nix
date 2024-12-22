@@ -34,5 +34,6 @@
 
   systemd.tmpfiles.rules = [ 
     "d /persist/z 0700 ${username} ${username} -" # create a persisted "home" directory for `zogstrip`
+    "L /etc/machine-id - - - - /persist/etc/machine-id" # TODO: workaround for https://github.com/NixOS/nixpkgs/pull/351151
   ];
 }
