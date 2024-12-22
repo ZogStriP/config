@@ -66,6 +66,12 @@
   # Machine's name
   networking.hostName = hostname;
 
+  # Use systemd's networkd
+  networking.useNetworkd = true;
+
+  # Disable dhcpcd because we're using networkd instead
+  networking.dhcpcd.enable = false;
+
   # Enable `iwd`
   networking.wireless.iwd.enable = true;
 
