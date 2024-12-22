@@ -1,4 +1,4 @@
-{ pkgs, lib, hostname, username, stateVersion, ... } : {
+{ pkgs, config, lib, hostname, username, stateVersion, ... } : {
   imports = [ ./luciole.nix ];
 
   # Various open source drivers
@@ -133,6 +133,11 @@
   services.tailscale.useRoutingFeatures = "client";
   networking.nameservers = [ "100.100.100.100" "8.8.8.8" "1.1.1.1" ];
   networking.search = [ "bicorn-duckbill.ts.net" ];
+  # move the `tailscaled --cleanup` from "ExecStopPost" to "ExecStop" so it can stop _before_ network is down
+  systemd.services.tailscaled.serviceConfig = {
+    ExecStopPost = lib.mkForce null;
+    ExecStop = lib.mkForce "${config.services.tailscale.package}/bin/tailscaled --cleanup";
+  };
 
   # use `agetty` to autologin
   services.getty.autologinUser = username;
