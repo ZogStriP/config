@@ -66,14 +66,8 @@
   # Machine's name
   networking.hostName = hostname;
 
-  # Enable NetworkManager
-  networking.networkmanager.enable = true;
-
-  # Use `iwd` for WiFi
-  networking.networkmanager.wifi.backend = "iwd";
-
-  # Disable wait-online target for faster boot
-  systemd.network.wait-online.enable = lib.mkForce false;
+  # Enable `iwd`
+  networking.wireless.iwd.enable = true;
 
   # Reduce services kill timeout from 1m30s down to 15s
   systemd.extraConfig = "DefaultTimeoutStopSec=15s";
