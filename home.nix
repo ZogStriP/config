@@ -40,8 +40,8 @@
   # disable command-not-found
   programs.command-not-found.enable = false;
 
-  # dactylogramme
   environment.systemPackages = [
+    # https://github.com/ZogStriP/dactylogramme/
     dactylogramme.packages.${pkgs.system}.default
   ];
 
@@ -311,6 +311,9 @@
 
       # better `find`
       fd.enable = true;
+
+      # spotify player
+      spotify-player.enable = true;
     };
 
     # (wayland) window manager
