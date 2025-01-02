@@ -328,6 +328,8 @@ in {
           SSH_AUTH_SOCK = "${home}/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock";
           # Disable Homebrew's hints
           HOMEBREW_NO_ENV_HINTS = 1;
+          # Use GitHub's authentication token to prevent rate limiting
+          NIX_CONFIG = "access-tokens = github.com=$(gh auth token)";
         };
 
         # Add directories to PATH
