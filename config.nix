@@ -8,6 +8,9 @@
 in {
   imports = [ hm.darwinModules.home-manager ];
 
+  # TODO: find a way to send the proper OSC sequences to
+  #       - signal to the terminal the current working directory (so it's displayed in the title, and used for other tabs/windows)
+  #       - change background color when sudo & ssh
   # TODO: extract Terminal.app's configuration from `defaults read com.apple.Terminal` and apply it here
   # TODO: find a way to install Kolide with nix ? https://github.com/kolide/nix-agent ?
   # TODO: find a way to set the wallpaper to Black solid color
