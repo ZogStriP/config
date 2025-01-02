@@ -445,6 +445,28 @@ in {
           wip  = "!f() { git add .; LEFTHOOK=0 git commit -n -m 'wip'; }; f";
           undo = "reset HEAD~1 --mixed";
         };
+        # Global ignores - cf. https://github.com/github/gitignore
+        git.ignores = [
+          # https://direnv.net
+          ".direnv"
+          ".envrc"
+
+          # https://devenv.sh
+          ".devenv*"
+          "devenv.*"
+
+          # node
+          "/node_modules/"
+
+          # tmp
+          "/tmp/"
+
+          # vim
+          "*.swp"
+
+          # macOS
+          ".DS_Store"
+        ];
         # Additional git config
         git.extraConfig = {
           # Set default branch to `main`
@@ -509,7 +531,7 @@ in {
         neovim.viAlias = true;
         neovim.vimAlias = true;
 
-        # nix CLI helper (`nh darwing switch`)
+        # nix CLI helper (`nh darwin switch`)
         nh.enable = true;
 
         # better `grep` (rg)
