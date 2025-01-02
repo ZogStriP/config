@@ -18,6 +18,7 @@ in {
   # TODO: find a way to make app installed by home-manager appear in the dock & spotlight
   # TODO: find a way to import the `discourse-org/ops` repository from the flake (and run `write-ssh-config` ??)
   #       => https://gist.github.com/arianvp/8f80c23a3410d27746fb97a6563d9677
+  #       => https://discourse.nixos.org/t/43218
   # TODO: is it better to define the `SSH_AUTH_SOCK` env variable instead of using "IdentityAgent" in the SSH config?
   # TODO: investigate why `LSQuarantine` isn't working
   # TODO: figure out why it's asking for sudo password twice when running `darwin-rebuild switch`
@@ -317,6 +318,8 @@ in {
           ff     = "fastfetch";
           python = "python3";
           zed    = "zeditor";
+          update = "nix flake update";
+          switch = "darwin-rebuild switch --flake .";
         };
 
         # Environment variables
