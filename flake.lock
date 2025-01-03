@@ -7,11 +7,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1733753589,
-        "narHash": "sha256-SgWdgUPy8jmG83c6AWzKwQmB7t9Xnf8woQHAHHOKrLc=",
+        "lastModified": 1735842090,
+        "narHash": "sha256-sFImbxl+CKLjNEbdfbj+iOc2ZtnVAIZXFkUhO01bn5w=",
         "owner": "zogstrip",
         "repo": "dactylogramme",
-        "rev": "53e7ff79da7b2f39b52a99b24f971dc462cd0574",
+        "rev": "32d8a939bd5d14388c8ac59db9dc3bf00bb86889",
         "type": "github"
       },
       "original": {
@@ -173,11 +173,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1735774425,
-        "narHash": "sha256-C73gLFnEh8ZI0uDijUgCDWCd21T6I6tsaWgIBHcfAXg=",
+        "lastModified": 1735900408,
+        "narHash": "sha256-U+oZBQ3f5fF2hHsupKQH4ihgTKLHgcJh6jEmKDg+W10=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "5f6aa268e419d053c3d5025da740e390b12ac936",
+        "rev": "1c8d4c8d592e8fab4cff4397db5529ec6f078cf9",
         "type": "github"
       },
       "original": {
