@@ -9,7 +9,6 @@ in {
   imports = [ hm.darwinModules.home-manager ];
 
   # TODO: find a way to send the proper OSC sequences to
-  #       - signal to the terminal the current working directory (so it's displayed in the title, and used for other tabs/windows)
   #       - change background color when sudo & ssh
   # TODO: extract Terminal.app's configuration from `defaults read com.apple.Terminal` and apply it here
   # TODO: find a way to install Kolide with nix ? https://github.com/kolide/nix-agent ?
@@ -276,7 +275,6 @@ in {
       "dropbox"
       "firefox"
       "google-chrome"
-      "monitorcontrol"
       "spotify"
       "visual-studio-code"
       "vlc"
@@ -410,6 +408,29 @@ in {
         # Manage zsh configuration
         zsh.enable = true;
         zsh.initExtra = ''
+          # Lifted from /etc/zshrc_Apple_Terminal
+          function update_terminal_cwd() {
+            local url_path=""
+            {
+              local i ch hexch LC_CTYPE=C LC_COLLATE=C LC_ALL= LANG=
+              for ((i = 1; i <= ''${#PWD}; ++i)); do
+                ch="$PWD[i]"
+                if [[ "$ch" =~ [/._~A-Za-z0-9-] ]]; then
+                  url_path+="$ch"
+                else
+                  printf -v hexch "%02X" "'$ch"
+                  url_path+="%$hexch"
+                fi
+              done
+            }
+            printf '\e]7;%s\a' "file://$HOST$url_path"
+          }
+
+          if [[ "$TERM_PROGRAM" == "Apple_Terminal" ]]; then
+            autoload -Uz add-zsh-hook
+            add-zsh-hook precmd update_terminal_cwd
+          fi
+
           # Display a warning if the terminal program needs Full Disk Access
           if [[ -n "$TERM_PROGRAM" ]] && [[ -o interactive ]] && ! [[ -r ~/Library/Application\ Support/com.apple.TCC/TCC.db ]]; then
             echo
