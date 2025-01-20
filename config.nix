@@ -12,7 +12,6 @@ in {
   #       - change background color when sudo & ssh
   # TODO: extract Terminal.app's configuration from `defaults read com.apple.Terminal` and apply it here
   # TODO: find a way to install Kolide with nix ? https://github.com/kolide/nix-agent ?
-  # TODO: find a way to set the wallpaper to Black solid color
   # TODO: find a way to set the screen resolution
   # TODO: find a way to make app installed by home-manager appear in the dock & spotlight
   # TODO: find a way to import the `discourse-org/ops` repository from the flake (and run `write-ssh-config` ??)
@@ -266,6 +265,7 @@ in {
     # CLIs
     brews = [
       "imagemagick"
+      "mactop"
     ];
 
     # GUIs
