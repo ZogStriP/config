@@ -276,6 +276,7 @@ in {
       "firefox"
       "google-chrome"
       "spotify"
+      "tailscale"
       "visual-studio-code"
       "vlc"
       "zed"
@@ -284,11 +285,6 @@ in {
 
   # Define user's home directory
   users.users.${username}.home = home;
-
-  services = {
-    # tailscale VPN
-    tailscale.enable = true;
-  };
 
   # Home Manager Configuration
   home-manager = {
