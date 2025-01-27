@@ -314,6 +314,9 @@
 
       # spotify player
       spotify-player.enable = true;
+
+      # terminal-based file manager
+      yazi.enable = true;
     };
 
     # (wayland) window manager
