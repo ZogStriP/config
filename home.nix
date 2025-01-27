@@ -186,6 +186,8 @@
       # system informations (better `neofetch`)
       fastfetch.enable = true;
 
+      helix.enable = true;
+
       # text editor
       # monochrome theme from https://wickstrom.tech/2024-08-12-a-flexible-minimalist-neovim.html
       nixvim = {
