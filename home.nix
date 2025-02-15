@@ -148,16 +148,18 @@
           wip = "!f() { git add .; git commit --no-verify -m 'wip'; }; f";
           undo = "reset HEAD~1 --mixed";
         };
+        # commit signing
+        signing = {
+          format = "ssh";
+          signer = lib.getExe' pkgs._1password-gui "op-ssh-sign";
+          signByDefault = true;
+        };
         # global git config
         extraConfig = {
           init.defaultBranch = "main";
           push.autoSetupRemote = true;
           # always use SSH - https://www.jvt.me/posts/2019/03/20/git-rewrite-url-https-ssh/
           url."ssh://git@github.com/".InsteadOf = "https://github.com/";
-          # commit signing
-          commit.gpgsign = true;
-          gpg.format = "ssh";
-          gpg.ssh.program = lib.getExe' pkgs._1password-gui "op-ssh-sign";
           # user settings
           user = {
             name = username;
