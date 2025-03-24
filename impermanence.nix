@@ -25,6 +25,7 @@
         ".cache"
         ".cargo"
         ".config/1Password"
+        ".cursor"
         ".local/share"
         ".mozilla"
         ".ssh"
