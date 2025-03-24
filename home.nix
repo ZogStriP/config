@@ -97,6 +97,9 @@
         [[ -z "$DISPLAY" && $(tty) = "/dev/tty1" ]] && exec ${pkgs.river}/bin/river > ~/.river.log 2>&1
       '';
 
+      # chrome
+      chromium.enable = true;
+
       # enable fish (used in `foot`)
       fish.enable = true;
 
@@ -379,6 +382,8 @@
           ###
           # open new terminal
           "Super Return" = "spawn foot";
+          # open chromium
+          "Super C" = "spawn chromium";
           # open firefox
           "Super F" = "spawn firefox";
           # open 1Password's quick access
