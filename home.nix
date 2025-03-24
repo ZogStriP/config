@@ -74,7 +74,6 @@
       wl-clipboard # wl-copy / wl-paste
       zeal # offline doc
       code-cursor
-      windsurf
     ];
 
     # Configure dark mode for GTK3 applications
