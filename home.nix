@@ -163,6 +163,29 @@
           wip = "!f() { git add .; git commit --no-verify -m 'wip'; }; f";
           undo = "reset HEAD~1 --mixed";
         };
+        # global ignores - cf. https://github.com/github/gitignore
+        ignores = [
+          # https://aider.chat
+          ".aider*"
+
+          # https://direnv.net
+          ".direnv"
+
+          # https://devenv.sh
+          ".devenv*"
+
+          # node
+          "/node_modules/"
+
+          # tmp
+          "/tmp/"
+
+          # vim
+          "*.swp"
+
+          # macOS
+          ".DS_Store"
+        ]; 
         # commit signing
         signing = {
           format = "ssh";
@@ -183,6 +206,10 @@
           };
         };
       };
+
+      # github cli
+      gh.enable = true;
+      gh.settings.git_protocol = "ssh";
 
       # (wayland) terminal emulator
       # https://codeberg.org/dnkl/foot
