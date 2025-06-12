@@ -22,13 +22,20 @@
     users.${username} = {
       # required user directories
       directories = [
+        ".aider"
         ".cache"
         ".cargo"
         ".config/1Password"
-        ".cursor"
+        ".config/gh"
+        # TODO: figure out why this doesn't work
+        # { directory = ".config/op"; mode = "0700"; }
         ".local/share"
         ".mozilla"
         ".ssh"
+      ];
+      # required user files
+      files = [
+        ".claude.json"
       ];
     };
   };

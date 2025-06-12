@@ -57,23 +57,34 @@
 
     # Some shell aliases
     home.shellAliases = {
-      ".." = "cd ..";
+      ".."  = "cd ..";
       "..." = "cd ../..";
-      "ff" = "fastfetch";
+      ff    = "fastfetch";
+    };
+
+    home.sessionVariables = {
+      # disable homebrew's hints
+      HOMEBREW_NO_ENV_HINTS = 1;
+      # use github's auth token to prevent rate limits
+      NIX_CONFIG = "access-tokens = github.com=$(gh auth token)";
+      # enable yjit
+      RUBY_YJIT_ENABLE = 1;
     };
 
     # Programs that don't need configuration
     home.packages = with pkgs; [
+      aider-chat-with-bedrock
+      claude-code
       curl # making requests
       devenv # https://devenv.sh
       duf # better `df`
       dust # better `du`
       jless # JSON pager
       ncdu # interactive `du`
+      python3
       wget # downloading stuff
       wl-clipboard # wl-copy / wl-paste
       zeal # offline doc
-      code-cursor
     ];
 
     # Configure dark mode for GTK3 applications

@@ -160,10 +160,9 @@
 
   # Allow 1password "unfree" packages
   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem(lib.getName pkg) [
-    "1password-cli"
     "1password"
-    "cursor"
-    "windsurf"
+    "1password-cli"
+    "claude-code"
   ];
 
   # Disable nix channels
