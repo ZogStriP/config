@@ -12,7 +12,6 @@
 
     nixvim.url = "github:nix-community/nixvim";
     nixvim.inputs.nixpkgs.follows = "nixpkgs";
-    nixvim.inputs.home-manager.follows = "home-manager";
 
     dactylogramme.url = "github:zogstrip/dactylogramme";
     dactylogramme.inputs.nixpkgs.follows = "nixpkgs";
