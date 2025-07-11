@@ -361,6 +361,9 @@
       # spotify player
       spotify-player.enable = true;
 
+      # fast python package manager
+      uv.enable = true;
+
       # terminal-based file manager
       yazi.enable = true;
     };
