@@ -22,7 +22,6 @@
     users.${username} = {
       # required user directories
       directories = [
-        ".aider"
         ".cache"
         ".cargo"
         ".config/1Password"

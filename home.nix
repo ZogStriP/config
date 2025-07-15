@@ -73,7 +73,6 @@
 
     # Programs that don't need configuration
     home.packages = with pkgs; [
-      aider-chat-with-bedrock
       claude-code
       curl # making requests
       devenv # https://devenv.sh
@@ -165,9 +164,6 @@
         };
         # global ignores - cf. https://github.com/github/gitignore
         ignores = [
-          # https://aider.chat
-          ".aider*"
-
           # https://direnv.net
           ".direnv"
 
