@@ -25,6 +25,8 @@ in {
   power.sleep.allowSleepByPowerButton = false;
 
   system = {
+    primaryUser = username;
+
     keyboard = {
       # Enable keyboard mapping
       enableKeyMapping = true;
@@ -40,7 +42,7 @@ in {
   };
 
   # Enable Touch ID authentication for sudo
-  security.pam.enableSudoTouchIdAuth = true;
+  security.pam.services.sudo_local.touchIdAuth = true;
 
   # Configure Nix package manager
   nix.settings = {
@@ -150,7 +152,7 @@ in {
         "/Applications/Visual Studio Code.app"
         "/Applications/Spotify.app"
         "/Applications/Zed.app"
-        "/System/Applications/Utilities/Terminal.app"
+        "/Applications/Ghostty.app"
       ];
       # No folders in dock
       persistent-others = [];
@@ -225,7 +227,7 @@ in {
     };
   };
 
-  system.activationScripts.extraUserActivation.text = lib.mkAfter ''
+  system.activationScripts.extraActivation.text = lib.mkAfter ''
     # Exclude directories from Spotlight
     if [[ -d "/System/Volumes/Data/.Spotlight-V100" ]]; then
       echo 2>&1 "excluding directories from 🔍 spotlight..."
@@ -274,6 +276,7 @@ in {
       "1password-cli"
       "dropbox"
       "firefox"
+      "ghostty"
       "google-chrome"
       "spotify"
       "tailscale"
@@ -403,7 +406,7 @@ in {
 
         # Manage zsh configuration
         zsh.enable = true;
-        zsh.initExtra = ''
+        zsh.initContent = ''
           # Lifted from /etc/zshrc_Apple_Terminal
           function update_terminal_cwd() {
             local url_path=""
