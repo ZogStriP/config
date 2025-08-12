@@ -74,7 +74,7 @@
       };
       "/tmp" = {
         fsType = "tmpfs";
-        mountOptions = [ "size=2G" "defaults" ];
+        mountOptions = [ "size=4G" "defaults" ];
       };
     };
   };
